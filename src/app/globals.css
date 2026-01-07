@@ -1,26 +1,72 @@
 @import "tailwindcss";
 
+@custom-variant dark (&:where(.dark, .dark *));
+
 :root {
   --background: #ffffff;
   --foreground: #171717;
+  --primary: #D1BFA7;
+  --background-light: #FFFFFF;
+  --background-dark: #1a1a1a;
+  --section-gray-light: #F8F8F8;
+  --section-gray-dark: #252525;
+  --text-light: #4a4a4a;
+  --text-dark: #e5e5e5;
+  --accent-dark: #2a2a2a;
 }
 
-@theme inline {
+@theme {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
+  --color-primary: var(--primary);
+  --color-background-light: var(--background-light);
+  --color-background-dark: var(--background-dark);
+  --color-section-gray-light: var(--section-gray-light);
+  --color-section-gray-dark: var(--section-gray-dark);
+  --color-text-light: var(--text-light);
+  --color-text-dark: var(--text-dark);
+  --color-accent-dark: var(--accent-dark);
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
+  --font-display: 'Cinzel', serif;
+  --font-body: 'Lato', sans-serif;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+.dark {
+  --background: #0a0a0a;
+  --foreground: #ededed;
+  --background-light: #1a1a1a;
+  --background-dark: #0a0a0a;
+  --section-gray-light: #252525;
+  --section-gray-dark: #1a1a1a;
+  --text-light: #e5e5e5;
+  --text-dark: #ffffff;
 }
 
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-body), Arial, Helvetica, sans-serif;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #888;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
+
+html {
+  scroll-behavior: smooth;
 }
