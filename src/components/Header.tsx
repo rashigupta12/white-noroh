@@ -27,9 +27,23 @@ export default function Header() {
     };
   }, []);
 
-  const scrollToSection = (id: string) => {
+  // Handle hash navigation on homepage
+  useEffect(() => {
+    if (isHomePage && window.location.hash) {
+      const hash = window.location.hash.replace('#', '');
+      const element = document.getElementById(hash);
+      if (element) {
+        setTimeout(() => {
+          element.scrollIntoView({ behavior: 'smooth' });
+        }, 100);
+      }
+    }
+  }, [isHomePage]);
+
+  const handleHomePageScroll = (e: React.MouseEvent, sectionId: string) => {
     if (isHomePage) {
-      const element = document.getElementById(id);
+      e.preventDefault();
+      const element = document.getElementById(sectionId);
       if (element) {
         element.scrollIntoView({ behavior: 'smooth' });
       }
@@ -57,32 +71,46 @@ export default function Header() {
           {/* Navigation */}
           <nav className="flex flex-wrap justify-center gap-5 sm:gap-8 text-xs sm:text-sm uppercase tracking-widest font-semibold text-text-main-light">
             
-            <button
-              onClick={() => scrollToSection('home')}
+            {/* Home */}
+            <Link 
+              href="/#home"
+              onClick={(e) => handleHomePageScroll(e, 'home')}
               className="hover:text-gray-500 transition-colors"
             >
               Home
-            </button>
+            </Link>
 
-            <button
-              onClick={() => scrollToSection('about')}
+            {/* About */}
+            <Link 
+              href="/#about"
+              onClick={(e) => handleHomePageScroll(e, 'about')}
               className="hover:text-gray-500 transition-colors"
             >
               About
-            </button>
+            </Link>
 
             {/* Services Dropdown */}
             <div className="relative" ref={dropdownRef}>
-              <button
-                onClick={() => setIsServicesOpen(!isServicesOpen)}
+              <Link 
+                href="/#service"
+                onClick={(e) => {
+                  if (isHomePage) {
+                    e.preventDefault();
+                    const element = document.getElementById('service');
+                    if (element) {
+                      element.scrollIntoView({ behavior: 'smooth' });
+                    }
+                  }
+                  setIsServicesOpen(!isServicesOpen);
+                }}
                 className="bg-transparent p-0 font-semibold cursor-pointer underline-offset-4 hover:underline focus:outline-none flex items-center gap-1"
               >
                 Services
                 <ChevronDown className={`w-4 h-4 transition-transform ${isServicesOpen ? 'rotate-180' : ''}`} />
-              </button>
+              </Link>
               
               {isServicesOpen && (
-                <div className="absolute top-full left-0 mt-2 w-64 bg-white rounded-xl shadow-xl border border-gray-200 py-3 z-50">
+                <div className="absolute top-full -left-5 mt-2 w-64 bg-white rounded-xl shadow-xl border border-gray-200 py-3 z-50">
                   <div className="px-4 py-2 text-xs font-semibold text-gray-500 uppercase tracking-wider">
                     All Services
                   </div>
@@ -103,9 +131,17 @@ export default function Header() {
                   <div className="border-t border-gray-100 px-4 py-3">
                     <Link
                       href="/#service"
-                      onClick={() => {
+                      onClick={(e) => {
+                        e.preventDefault();
                         setIsServicesOpen(false);
-                        scrollToSection('service');
+                        if (isHomePage) {
+                          const element = document.getElementById('service');
+                          if (element) {
+                            element.scrollIntoView({ behavior: 'smooth' });
+                          }
+                        } else {
+                          window.location.href = '/#service';
+                        }
                       }}
                       className="text-sm text-primary font-semibold hover:text-primary/80 transition-colors flex items-center gap-2"
                     >
@@ -117,19 +153,23 @@ export default function Header() {
               )}
             </div>
 
-            {/* <button
-              onClick={() => scrollToSection('work')}
+            {/* Work */}
+            <Link 
+              href="/#work"
+              onClick={(e) => handleHomePageScroll(e, 'work')}
               className="hover:text-gray-500 transition-colors"
             >
               Work
-            </button> */}
+            </Link>
 
-            <button
-              onClick={() => scrollToSection('contact')}
+            {/* Contact */}
+            <Link 
+              href="/#contact"
+              onClick={(e) => handleHomePageScroll(e, 'contact')}
               className="hover:text-gray-500 transition-colors"
             >
               Contact
-            </button>
+            </Link>
           </nav>
 
         </div>

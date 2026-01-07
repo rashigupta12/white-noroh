@@ -77,7 +77,7 @@ export default function PortfolioSection() {
                 />
                 
                 {/* Subtle gradient overlay for better text visibility */}
-                <div className="absolute inset-0 bg-linear-to-t from-black/10 via-transparent to-transparent" />
+                {/* <div className="absolute inset-0 bg-linear-to-t from-black/10 via-transparent to-transparent" /> */}
               </div>
             ))}
           </div>

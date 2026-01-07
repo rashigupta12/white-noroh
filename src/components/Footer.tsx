@@ -2,11 +2,13 @@
 
 import { services } from '@/data/data'
 import { ChevronDown } from 'lucide-react'
-import { usePathname } from 'next/navigation'
+import Link from 'next/link'
+import { usePathname, useRouter } from 'next/navigation'
 import { useEffect, useRef, useState } from 'react'
 
 export default function Footer() {
   const pathname = usePathname()
+  const router = useRouter()
   const isHomePage = pathname === '/'
   const [isServicesOpen, setIsServicesOpen] = useState(false)
   const dropdownRef = useRef<HTMLDivElement>(null)
@@ -22,10 +24,38 @@ export default function Footer() {
     return () => document.removeEventListener('mousedown', handleClickOutside)
   }, [])
 
-  const scrollToSection = (id: string) => {
+  // Handle hash navigation on homepage
+  useEffect(() => {
+    if (isHomePage && window.location.hash) {
+      const hash = window.location.hash.replace('#', '')
+      const element = document.getElementById(hash)
+      if (element) {
+        setTimeout(() => {
+          element.scrollIntoView({ behavior: 'smooth' })
+        }, 100)
+      }
+    }
+  }, [isHomePage])
+
+  const handleHomePageScroll = (e: React.MouseEvent, sectionId: string) => {
     if (isHomePage) {
-      const el = document.getElementById(id)
-      if (el) el.scrollIntoView({ behavior: 'smooth' })
+      e.preventDefault()
+      const element = document.getElementById(sectionId)
+      if (element) {
+        element.scrollIntoView({ behavior: 'smooth' })
+      }
+    }
+    setIsServicesOpen(false)
+  }
+
+  const handleNavClick = (sectionId: string) => {
+    if (isHomePage) {
+      const element = document.getElementById(sectionId)
+      if (element) {
+        element.scrollIntoView({ behavior: 'smooth' })
+      }
+    } else {
+      router.push(`/#${sectionId}`)
     }
     setIsServicesOpen(false)
   }
@@ -74,24 +104,38 @@ export default function Footer() {
 
             <div className="flex flex-col gap-2.5 text-xs sm:text-lg lg:text-base font-semibold text-text-muted-light">
 
-              <button
-                onClick={() => scrollToSection('home')}
+              {/* Home */}
+              <Link 
+                href="/#home"
+                onClick={(e) => handleHomePageScroll(e, 'home')}
                 className="text-left hover:text-text-main-light transition-colors"
               >
                 Home
-              </button>
+              </Link>
 
-              <button
-                onClick={() => scrollToSection('about')}
+              {/* About */}
+              <Link 
+                href="/#about"
+                onClick={(e) => handleHomePageScroll(e, 'about')}
                 className="text-left hover:text-text-main-light transition-colors"
               >
                 About
-              </button>
+              </Link>
 
-              {/* SERVICES DROPDOWN */}
+              {/* Services Dropdown */}
               <div className="relative" ref={dropdownRef}>
-                <button
-                  onClick={() => setIsServicesOpen(!isServicesOpen)}
+                <Link 
+                  href="/#service"
+                  onClick={(e) => {
+                    if (isHomePage) {
+                      e.preventDefault()
+                      const element = document.getElementById('service')
+                      if (element) {
+                        element.scrollIntoView({ behavior: 'smooth' })
+                      }
+                    }
+                    setIsServicesOpen(!isServicesOpen)
+                  }}
                   className="flex items-center gap-1 hover:text-text-main-light transition-colors"
                 >
                   Services
@@ -100,29 +144,54 @@ export default function Footer() {
                       isServicesOpen ? 'rotate-180' : ''
                     }`}
                   />
-                </button>
+                </Link>
 
                 {isServicesOpen && (
                   <div className="absolute left-0 bottom-full mb-2 w-64 bg-white dark:bg-zinc-900 rounded-xl shadow-xl border border-gray-200 dark:border-zinc-800 py-2 z-50">
                     {services.map((service) => (
-                      <button
+                      <Link
                         key={service.id}
-                        onClick={() => scrollToSection('service')}
-                        className="w-full text-left px-4 py-2 text-xs sm:text-lg text-gray-700 dark:text-gray-300 hover:bg-gray-50 dark:hover:bg-zinc-800 transition-colors"
+                        href={`/service/${service.id}`}
+                        onClick={() => setIsServicesOpen(false)}
+                        className="block w-full text-left px-4 py-2 text-xs sm:text-lg text-gray-700 dark:text-gray-300 hover:bg-gray-50 dark:hover:bg-zinc-800 transition-colors"
                       >
                         {service.title}
-                      </button>
+                      </Link>
                     ))}
+                    <div className="border-t border-gray-200 dark:border-zinc-700 px-4 py-2">
+                      <Link
+                        href="/#service"
+                        onClick={(e) => {
+                          e.preventDefault()
+                          setIsServicesOpen(false)
+                          handleNavClick('service')
+                        }}
+                        className="text-sm text-primary font-semibold hover:text-primary/80 transition-colors"
+                      >
+                        View All Services →
+                      </Link>
+                    </div>
                   </div>
                 )}
               </div>
 
-              <button
-                onClick={() => scrollToSection('contact')}
+              {/* Work */}
+              <Link 
+                href="/#work"
+                onClick={(e) => handleHomePageScroll(e, 'work')}
+                className="text-left hover:text-text-main-light transition-colors"
+              >
+                Work
+              </Link>
+
+              {/* Contact */}
+              <Link 
+                href="/#contact"
+                onClick={(e) => handleHomePageScroll(e, 'contact')}
                 className="text-left hover:text-text-main-light transition-colors"
               >
                 Contact
-              </button>
+              </Link>
 
             </div>
           </div>
