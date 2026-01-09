@@ -49,7 +49,7 @@ export default function PortfolioSection() {
   };
 
   return (
-    <section className="bg-background-light dark:bg-background-dark">
+    <section className="bg-background-light dark:bg-background-dark py-10">
       <div className="mx-auto px-0">
         {/* Carousel Container - Responsive Heights */}
         <div 

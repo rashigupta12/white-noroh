@@ -1,25 +1,20 @@
-import type { Metadata } from 'next';
-import { Cinzel, Lato } from 'next/font/google';
-import './globals.css';
-import Header from '@/components/Header';
-import Footer from '@/components/Footer';
-// import { ThemeProvider } from '@/components/ThemeProvider';
+import type { Metadata } from "next";
+import { Inter } from "next/font/google"; // You can keep Inter as fallback
+import "./globals.css";
+import Header from "@/components/Header";
+import Footer from "@/components/Footer";
 
+// Remove Cinzel and Lato imports
+// import { Cinzel, Lato } from "next/font/google";
 
-const cinzel = Cinzel({
-  subsets: ['latin'],
-  variable: '--font-cinzel',
-});
-
-const lato = Lato({
-  weight: ['300', '400', '700'],
-  subsets: ['latin'],
-  variable: '--font-lato',
+const inter = Inter({
+  subsets: ["latin"],
+  variable: "--font-inter",
 });
 
 export const metadata: Metadata = {
-  title: 'White Noroh Studio',
-  description: 'Graphic Design Studio',
+  title: "White Noroh Studio",
+  description: "Graphic Design Studio",
 };
 
 export default function RootLayout({
@@ -28,17 +23,28 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en" className={`${cinzel.variable} ${lato.variable}`}>
+    <html lang="en" className={`${inter.variable}`}>
       <head>
-        <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons" />
+        <link
+          rel="stylesheet"
+          href="https://fonts.googleapis.com/icon?family=Material+Icons"
+        />
+        {/* Add Futura Fonts from CDN */}
+        <link rel="stylesheet" href="https://use.typekit.net/xlo0qba.css" />
+        {/* Alternative: Fonts.com CDN for Futura */}
+        <link
+          rel="stylesheet"
+          href="https://fast.fonts.net/cssapi/6b2936b8-14c8-4939-aa39-0770c2e4e1a8.css"
+        />
       </head>
-      <Header/>
-      <body className={`${lato.className} antialiased transition-colors duration-300`}>
-       
-          {children}
 
+      <body
+        className={`${inter.className} antialiased transition-colors duration-300`}
+      >
+        <Header />
+        <main>{children}</main>
+        <Footer />
       </body>
-      <Footer/>
     </html>
   );
 }

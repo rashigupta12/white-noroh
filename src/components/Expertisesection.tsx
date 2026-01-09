@@ -33,13 +33,15 @@ export default function ExpertiseSection() {
   return (
     <>
       <main id="service" className="pt-24 pb-20">
-        <section className="max-w-4xl mx-auto px-6 text-center mb-20 fade-in-up">
-          <h2 className="font-display text-4xl md:text-5xl text-text-main-light mb-6  font-bold">Our Expertise</h2>
-          <p className="text-text-muted-light dark:text-text-muted-dark leading-relaxed max-w-2xl mx-auto text-base md:text-lg">
-            We craft digital experiences and brand identities with a focus on simplicity, elegance, and purpose. From technical foundations to creative storytelling, we offer a holistic suite of services to elevate your brand.
-          </p>
-        </section>
-        
+       <section className="max-w-4xl mx-auto px-6 text-center mb-20 fade-in-up">
+  {/* Use font-futura-md class for "Our Expertise" */}
+  <h2 className="font-futura-md text-4xl md:text-5xl text-text-main-light mb-6 font-bold tracking-tight">
+    Our Expertise
+  </h2>
+  <p className="text-text-muted-light dark:text-text-muted-dark leading-relaxed max-w-2xl mx-auto text-base md:text-lg font-sans">
+    We craft digital experiences and brand identities with a focus on simplicity, elegance, and purpose. From technical foundations to creative storytelling, we offer a holistic suite of services to elevate your brand.
+  </p>
+</section>
         <div className="max-w-7xl mx-auto px-6">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6 lg:gap-8 mb-8">
             
@@ -89,7 +91,7 @@ export default function ExpertiseSection() {
               <div className="h-64 overflow-hidden relative">
                 <Link 
                   href={getServiceSlug(
-                    "https://lh3.googleusercontent.com/aida-public/AB6AXuBoIc4EedCH9bOtY4oPWhlXc6Qcki_NIh_o-VOj6TpqoyI_qWrAoO3QIMYmerPIDbBHyyUiIcATpurhw8g-hpCmxiHPqoLM_6ZzTNJbCrJcdVsfsPHoOrfIKSxG4QRx5AGoUqGV5nSMDkw-ZuwsTZSOpdaCwHv2FBVZzHfujqHyIr0ac7Dkmb5v_tM9yYoEmyR8E4mtl-C9VDGjf_SN7Fz1wv8ilSCoLtLkGmeMmVqyU3AL8BBm3PMdCf5ay4moFKFGuUb2z1Gv0wE",
+                    "/itservice/hero.jpeg",
                     "IT Services"
                   )}
                   className="block w-full h-full relative"
@@ -98,7 +100,7 @@ export default function ExpertiseSection() {
                   <Image 
                     alt="Minimalist coding setup on a laptop" 
                     className="card-img w-full h-full object-cover transition-transform duration-700 ease-out grayscale group-hover:grayscale-0 hover:scale-105" 
-                    src="https://lh3.googleusercontent.com/aida-public/AB6AXuBoIc4EedCH9bOtY4oPWhlXc6Qcki_NIh_o-VOj6TpqoyI_qWrAoO3QIMYmerPIDbBHyyUiIcATpurhw8g-hpCmxiHPqoLM_6ZzTNJbCrJcdVsfsPHoOrfIKSxG4QRx5AGoUqGV5nSMDkw-ZuwsTZSOpdaCwHv2FBVZzHfujqHyIr0ac7Dkmb5v_tM9yYoEmyR8E4mtl-C9VDGjf_SN7Fz1wv8ilSCoLtLkGmeMmVqyU3AL8BBm3PMdCf5ay4moFKFGuUb2z1Gv0wE"
+                    src="/itservice/hero.jpeg"
                     fill
                     sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
                     style={{ objectFit: 'cover' }}

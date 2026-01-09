@@ -49,54 +49,101 @@
         }
       ]
     },
-    {
-      "id": "it-services",
-      "title": "IT Services",
-      "slug": "it-services",
-      "category": "Technical Foundation",
-      "description": "Building the backbone of your digital presence. We specialize in creating robust, scalable, and secure web architectures tailored to your specific business needs.",
-      "fullDescription": "Our IT services team comprises experienced developers and architects who understand that every business is unique. We don't believe in one-size-fits-all solutions. Instead, we take the time to understand your specific requirements, challenges, and goals to create custom solutions that drive real business value.",
-      "icon": "Terminal",
-      "heroImage": "https://lh3.googleusercontent.com/aida-public/AB6AXuBoIc4EedCH9bOtY4oPWhlXc6Qcki_NIh_o-VOj6TpqoyI_qWrAoO3QIMYmerPIDbBHyyUiIcATpurhw8g-hpCmxiHPqoLM_6ZzTNJbCrJcdVsfsPHoOrfIKSxG4QRx5AGoUqGV5nSMDkw-ZuwsTZSOpdaCwHv2FBVZzHfujqHyIr0ac7Dkmb5v_tM9yYoEmyR8E4mtl-C9VDGjf_SN7Fz1wv8ilSCoLtLkGmeMmVqyU3AL8BBm3PMdCf5ay4moFKFGuUb2z1Gv0wE",
-      "services": [
-        "Custom Web Development",
-        "E-commerce Solutions",
-        "CMS Integration",
-        "API Development",
-        "Cloud Solutions",
-        "Technical Support"
-      ],
-      "team": [
-        {
-          "name": "Alex Thompson",
-          "designation": "Lead Full-Stack Developer",
-          "image": "/team/alex-thompson.jpg",
-          "bio": "10+ years building scalable web applications and enterprise solutions",
-          "specialization": ["React", "Node.js", "Cloud Architecture"]
-        },
-        {
-          "name": "Priya Sharma",
-          "designation": "E-commerce Specialist",
-          "image": "/team/priya-sharma.jpg",
-          "bio": "Expert in Shopify, WooCommerce, and custom e-commerce platforms",
-          "specialization": ["E-commerce", "Payment Integration", "Conversion Optimization"]
-        },
-        {
-          "name": "James Wilson",
-          "designation": "Backend Architect",
-          "image": "/team/james-wilson.jpg",
-          "bio": "Specialized in building robust APIs and database architectures",
-          "specialization": ["API Design", "Database Optimization", "System Architecture"]
-        },
-        {
-          "name": "Lisa Anderson",
-          "designation": "Frontend Developer",
-          "image": "/team/lisa-anderson.jpg",
-          "bio": "Creating beautiful, performant user interfaces with modern frameworks",
-          "specialization": ["React", "Next.js", "UI/UX Implementation"]
-        }
-      ]
-    },
+ {
+    "id": "it-services",
+    "title": "IT Services",
+    "slug": "it-services",
+    "category": "Technical Foundation",
+    "description": "Building the backbone of your digital presence. We specialize in creating robust, scalable, and secure web architectures tailored to your specific business needs.",
+    "fullDescription": "Our IT services team comprises experienced developers and architects who understand that every business is unique. We don't believe in one-size-fits-all solutions. Instead, we take the time to understand your specific requirements, challenges, and goals to create custom solutions that drive real business value.",
+    "icon": "Terminal",
+    "heroImage": "/itservice/hero.jpeg",
+    "services": [
+      "Custom Web Development",
+      "E-commerce Solutions",
+      "CMS Integration",
+      "API Development",
+      "Cloud Solutions",
+      "Technical Support"
+    ],
+    "team": [
+   
+      
+      // New team members as requested
+      {
+        "name": "Amit Gupta",
+        "designation": "IT Consultant",
+        "image": "/team/amit-gupta.jpg",
+        "bio": "30+ years of industry experience in IT consulting, digital transformation, and enterprise solutions",
+        "specialization": ["Digital Transformation", "Enterprise Architecture", "IT Strategy"]
+      },
+      {
+        "name": "Pawan Gupta",
+        "designation": "CISA Certified CA",
+        "image": "/team/pawan-gupta.jpg",
+        "bio": "40+ years of industry experience with expertise in IT governance, risk management, and compliance",
+        "specialization": ["IT Governance", "Risk Management", "Compliance", "Audit"]
+      },
+      {
+        "name": "Shweta Sharma",
+        "designation": "Creative Head",
+        "image": "/team/shweta-sharma.jpg",
+        "bio": "20+ years of experience bridging creativity with technology for exceptional user experiences",
+        "specialization": ["UI/UX Design", "Creative Direction", "Brand Integration"]
+      },
+      {
+        "name": "Pankaj Gupta",
+        "designation": "Azure Architect",
+        "image": "/team/pankaj-gupta.jpg",
+        "bio": "25+ years of experience in cloud architecture, with deep specialization in Microsoft Azure solutions",
+        "specialization": ["Azure Cloud", "Microservices", "DevOps", "Cloud Security"]
+      },
+      {
+        "name": "Parul",
+        "designation": "Security & Cloud Architect",
+        "image": "/team/parul.jpg",
+        "bio": "25+ years of experience in cybersecurity and cloud infrastructure with focus on secure architectures",
+        "specialization": ["Cloud Security", "Infrastructure Security", "Compliance", "Network Security"]
+      },
+      
+      // Additional 5 team members for full stack, Shopify, WordPress, React, hybrid apps
+      {
+        "name": "Rahul Verma",
+        "designation": "Senior Full Stack Developer",
+        "image": "/team/rahul-verma.jpg",
+        "bio": "12+ years experience in MERN stack development and scalable application architecture",
+        "specialization": ["React", "Node.js", "MongoDB", "AWS", "REST APIs"]
+      },
+      {
+        "name": "Anjali Mehta",
+        "designation": "Shopify Expert",
+        "image": "/team/anjali-mehta.jpg",
+        "bio": "8+ years specializing in Shopify store development, customization, and optimization",
+        "specialization": ["Shopify Plus", "Liquid", "App Development", "E-commerce Strategy"]
+      },
+      {
+        "name": "Vikram Singh",
+        "designation": "WordPress Specialist",
+        "image": "/team/vikram-singh.jpg",
+        "bio": "10+ years building custom WordPress solutions, themes, and plugins",
+        "specialization": ["WordPress Development", "PHP", "WooCommerce", "Custom Plugins"]
+      },
+      {
+        "name": "Neha Patel",
+        "designation": "React Native Developer",
+        "image": "/team/neha-patel.jpg",
+        "bio": "7+ years experience in hybrid and cross-platform mobile application development",
+        "specialization": ["React Native", "iOS/Android", "Hybrid Apps", "Mobile UI/UX"]
+      },
+      {
+        "name": "Karan Malhotra",
+        "designation": "Frontend Architect",
+        "image": "/team/karan-malhotra.jpg",
+        "bio": "9+ years specializing in modern frontend frameworks and performance optimization",
+        "specialization": ["React", "Vue.js", "TypeScript", "PWA", "Performance Optimization"]
+      }
+    ]
+  },
     {
       "id": "media-sound",
       "title": "Media & Sound",

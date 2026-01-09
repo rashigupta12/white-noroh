@@ -9,12 +9,13 @@ export default function Home() {
     <div className="min-h-screen bg-background-light dark:bg-background-dark text-text-light dark:text-text-dark transition-colors duration-300">
       {/* <Header /> */}
       <main>
-        <HeroSection />
-        <WelcomeSection />
         <PortfolioSection />
-        
-    <ExpertiseSection/>
-        
+
+        <WelcomeSection />
+        <HeroSection />
+
+        <ExpertiseSection />
+
         <ContactSection />
       </main>
       {/* <ThemeToggle />

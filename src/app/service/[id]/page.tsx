@@ -26,7 +26,7 @@ export default function ServiceDetailPage() {
           src={service.heroImage}
           alt={service.title}
           fill
-          className="object-cover grayscale"
+          className="object-cover "
           priority
         />
         <div className="absolute inset-0 bg-linear-to-t from-black/80 via-black/50 to-transparent"></div>
