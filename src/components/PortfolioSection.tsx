@@ -5,7 +5,7 @@ import Image from 'next/image';
 
 export default function PortfolioSection() {
   const images = [
-    '/Home banner1.png',
+    '/Home banner1.jpg',
     '/Home banner2.png',
     '/Home banner3.png',
     '/Home banner4.png',
