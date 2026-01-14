@@ -52,7 +52,7 @@ export default function Header() {
   };
 
   return (
-    <header className="fixed top-0 w-full z-50 bg-white border-b border-gray-200">
+    <header className="fixed top-0 w-full z-50 bg-white ">
       <div className="mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex flex-col sm:flex-row items-center justify-between py-6 sm:py-5">
 
