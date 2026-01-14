@@ -1,7 +1,7 @@
 'use client'
 
 import { services } from '@/data/data'
-import { ChevronDown } from 'lucide-react'
+import { ChevronDown, Mail, Phone, MapPin, ArrowRight } from 'lucide-react'
 import Link from 'next/link'
 import { usePathname, useRouter } from 'next/navigation'
 import { useEffect, useRef, useState } from 'react'
@@ -61,169 +61,202 @@ export default function Footer() {
   }
 
   return (
-    <footer className="bg-background-light dark:bg-background-dark pt-14 sm:pt-16 pb-8 border-t border-gray-100 dark:border-gray-800">
-      <div className="max-w-10xl mx-auto px-4 sm:px-6">
-
-        {/* MAIN GRID */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-10 sm:gap-12 mb-14">
-
-          {/* BRAND */}
-          <div>
-            <h4 className="font-display text-lg sm:text-xl lg:text-2xl uppercase tracking-widest mb-5 font-bold text-text-main-light dark:text-white">
-              White Noroh
-            </h4>
-            <p className="text-xs sm:text-lg lg:text-base text-text-muted-light dark:text-text-muted-dark leading-relaxed font-medium">
-              A multidisciplinary studio focusing on minimal design, digital strategy, and creative storytelling.
-            </p>
-          </div>
-
-          {/* CONTACT */}
-          <div>
-            <h4 className="text-xs sm:text-lg font-bold uppercase tracking-widest mb-5 text-text-main-light dark:text-white">
-              Get in Touch
-            </h4>
-            <ul className="space-y-3 text-xs sm:text-lg lg:text-base font-medium text-text-muted-light dark:text-text-muted-dark">
-              <li>India</li>
-              <li>
+    <footer className="bg-background-light dark:bg-background-dark border-t border-gray-100 dark:border-gray-800">
+      <div className="max-w-10xl mx-auto px-4 sm:px-6 lg:px-8">
+        
+        {/* Main Footer Content */}
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 py-16">
+          
+          {/* Brand Column - Full width on mobile, 5 cols on desktop */}
+          <div className="lg:col-span-5">
+            <div className="space-y-6">
+              <div>
+                <h3 className="font-display text-2xl lg:text-3xl uppercase tracking-widest font-bold text-text-main-light dark:text-white mb-4">
+                  White Noroh
+                </h3>
+                <p className="text-sm lg:text-base text-text-muted-light dark:text-text-muted-dark leading-relaxed max-w-lg">
+                  A multidisciplinary studio focusing on minimal design, digital strategy, and creative storytelling. 
+                  We craft meaningful experiences through thoughtful design.
+                </p>
+              </div>
+              
+              {/* Contact Info */}
+              <div className="space-y-3">
+                <div className="flex items-center gap-3 text-sm text-text-muted-light dark:text-text-muted-dark">
+                  <MapPin className="w-4 h-4" />
+                  <span>India</span>
+                </div>
                 <a
                   href="mailto:whitenoroh@gmail.com"
-                  className="hover:text-text-main-light transition-colors underline-offset-4 hover:underline"
+                  className="flex items-center gap-3 text-sm hover:text-text-main-light dark:hover:text-white transition-colors group"
                 >
-                  whitenoroh@gmail.com
+                  <Mail className="w-4 h-4" />
+                  <span className="underline-offset-4 hover:underline">whitenoroh@gmail.com</span>
                 </a>
-              </li>
-              <li>+91 9389495430</li>
-            </ul>
-          </div>
-
-          {/* EXPLORE */}
-          <div>
-            <h4 className="text-xs sm:text-lg font-bold uppercase tracking-widest mb-5 text-text-main-light dark:text-white">
-              Explore
-            </h4>
-
-            <div className="flex flex-col gap-2.5 text-xs sm:text-lg lg:text-base font-semibold text-text-muted-light">
-
-              {/* Home */}
-              <Link 
-                href="/#home"
-                onClick={(e) => handleHomePageScroll(e, 'home')}
-                className="text-left hover:text-text-main-light transition-colors"
-              >
-                Home
-              </Link>
-
-              {/* About */}
-              <Link 
-                href="/#about"
-                onClick={(e) => handleHomePageScroll(e, 'about')}
-                className="text-left hover:text-text-main-light transition-colors"
-              >
-                About
-              </Link>
-
-              {/* Services Dropdown */}
-              <div className="relative" ref={dropdownRef}>
-                <Link 
-                  href="/#service"
-                  onClick={(e) => {
-                    if (isHomePage) {
-                      e.preventDefault()
-                      const element = document.getElementById('service')
-                      if (element) {
-                        element.scrollIntoView({ behavior: 'smooth' })
-                      }
-                    }
-                    setIsServicesOpen(!isServicesOpen)
-                  }}
-                  className="flex items-center gap-1 hover:text-text-main-light transition-colors"
+                <a
+                  href="tel:+919389495430"
+                  className="flex items-center gap-3 text-sm hover:text-text-main-light dark:hover:text-white transition-colors group"
                 >
-                  Services
-                  <ChevronDown
-                    className={`w-4 h-4 transition-transform ${
-                      isServicesOpen ? 'rotate-180' : ''
-                    }`}
-                  />
-                </Link>
-
-                {isServicesOpen && (
-                  <div className="absolute left-0 bottom-full mb-2 w-64 bg-white dark:bg-zinc-900 rounded-xl shadow-xl border border-gray-200 dark:border-zinc-800 py-2 z-50">
-                    {services.map((service) => (
-                      <Link
-                        key={service.id}
-                        href={`/service/${service.id}`}
-                        onClick={() => setIsServicesOpen(false)}
-                        className="block w-full text-left px-4 py-2 text-xs sm:text-lg text-gray-700 dark:text-gray-300 hover:bg-gray-50 dark:hover:bg-zinc-800 transition-colors"
-                      >
-                        {service.title}
-                      </Link>
-                    ))}
-                    <div className="border-t border-gray-200 dark:border-zinc-700 px-4 py-2">
-                      <Link
-                        href="/#service"
-                        onClick={(e) => {
-                          e.preventDefault()
-                          setIsServicesOpen(false)
-                          handleNavClick('service')
-                        }}
-                        className="text-sm text-primary font-semibold hover:text-primary/80 transition-colors"
-                      >
-                        View All Services →
-                      </Link>
-                    </div>
-                  </div>
-                )}
+                  <Phone className="w-4 h-4" />
+                  <span className="underline-offset-4 hover:underline">+91 9389495430</span>
+                </a>
               </div>
-
-              {/* Work */}
-              <Link 
-                href="/#work"
-                onClick={(e) => handleHomePageScroll(e, 'work')}
-                className="text-left hover:text-text-main-light transition-colors"
-              >
-                Work
-              </Link>
-
-              {/* Contact */}
-              <Link 
-                href="/#contact"
-                onClick={(e) => handleHomePageScroll(e, 'contact')}
-                className="text-left hover:text-text-main-light transition-colors"
-              >
-                Contact
-              </Link>
-
             </div>
           </div>
 
-          {/* NEWSLETTER */}
-          <div>
-            <h4 className="text-xs sm:text-lg font-bold uppercase tracking-widest mb-5 text-text-main-light dark:text-white">
-              Stay Updated
-            </h4>
-            <form className="flex flex-col gap-4">
-              <input
-                type="email"
-                placeholder="Enter your email"
-                className="bg-transparent border-b border-gray-300 dark:border-gray-700 py-2 text-xs sm:text-lg focus:outline-none focus:border-text-main-light"
-              />
-              <button
-                type="submit"
-                className="self-start text-[10px] sm:text-xs uppercase tracking-widest font-bold hover:text-text-main-light transition-colors"
-              >
-                Subscribe
-              </button>
-            </form>
+          {/* Navigation and Services Columns */}
+          <div className="lg:col-span-7 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
+            
+            {/* Quick Links */}
+            <div>
+              <h4 className="text-sm font-bold uppercase tracking-widest mb-6 text-text-main-light dark:text-white">
+                Explore
+              </h4>
+              <nav className="space-y-4">
+                {[
+                  { id: 'home', label: 'Home' },
+                  { id: 'about', label: 'About' },
+                  { id: 'work', label: 'Work' },
+                  { id: 'contact', label: 'Contact' }
+                ].map((item) => (
+                  <Link
+                    key={item.id}
+                    href={`/#${item.id}`}
+                    onClick={(e) => handleHomePageScroll(e, item.id)}
+                    className="block text-sm font-medium text-text-muted-light dark:text-text-muted-dark hover:text-text-main-light dark:hover:text-white transition-colors hover:translate-x-1 transform duration-200"
+                  >
+                    {item.label}
+                  </Link>
+                ))}
+              </nav>
+            </div>
+
+            {/* Services */}
+            <div className="relative" ref={dropdownRef}>
+              <div className="flex items-center justify-between mb-6">
+                <h4 className="text-sm font-bold uppercase tracking-widest text-text-main-light dark:text-white">
+                  Services
+                </h4>
+                <button
+                  onClick={() => setIsServicesOpen(!isServicesOpen)}
+                  className="lg:hidden"
+                >
+                  <ChevronDown className={`w-4 h-4 transition-transform ${isServicesOpen ? 'rotate-180' : ''}`} />
+                </button>
+              </div>
+              
+              {/* Desktop Services List */}
+              <div className="hidden lg:block space-y-4">
+                {services.slice(0, 5).map((service) => (
+                  <Link
+                    key={service.id}
+                    href={`/service/${service.id}`}
+                    className="block text-sm font-medium text-text-muted-light dark:text-text-muted-dark hover:text-text-main-light dark:hover:text-white transition-colors group"
+                  >
+                    <div className="flex items-center gap-2">
+                      <ArrowRight className="w-3 h-3 opacity-0 group-hover:opacity-100 transition-opacity" />
+                      <span>{service.title}</span>
+                    </div>
+                  </Link>
+                ))}
+                <Link
+                  href="/#service"
+                  onClick={(e) => {
+                    e.preventDefault()
+                    handleNavClick('service')
+                  }}
+                  className="inline-flex items-center gap-2 text-sm font-semibold text-primary hover:text-primary/80 transition-colors group mt-2"
+                >
+                  View All Services
+                  <ArrowRight className="w-3 h-3 group-hover:translate-x-1 transition-transform" />
+                </Link>
+              </div>
+
+              {/* Mobile Services Dropdown */}
+              <div className="lg:hidden">
+                <div className="space-y-4">
+                  {isServicesOpen && services.slice(0, 5).map((service) => (
+                    <Link
+                      key={service.id}
+                      href={`/service/${service.id}`}
+                      onClick={() => setIsServicesOpen(false)}
+                      className="block text-sm font-medium text-text-muted-light dark:text-text-muted-dark hover:text-text-main-light dark:hover:text-white transition-colors"
+                    >
+                      {service.title}
+                    </Link>
+                  ))}
+                  {isServicesOpen && (
+                    <Link
+                      href="/#service"
+                      onClick={(e) => {
+                        e.preventDefault()
+                        setIsServicesOpen(false)
+                        handleNavClick('service')
+                      }}
+                      className="inline-flex items-center gap-2 text-sm font-semibold text-primary hover:text-primary/80 transition-colors group"
+                    >
+                      View All Services
+                      <ArrowRight className="w-3 h-3 group-hover:translate-x-1 transition-transform" />
+                    </Link>
+                  )}
+                </div>
+              </div>
+            </div>
+
+            {/* Social Links */}
+            <div>
+              <h4 className="text-sm font-bold uppercase tracking-widest mb-6 text-text-main-light dark:text-white">
+                Connect
+              </h4>
+              <div className="space-y-4">
+                {[
+                  { name: 'Instagram', href: '#' },
+                  { name: 'LinkedIn', href: '#' },
+                  { name: 'Behance', href: '#' },
+                  { name: 'Dribbble', href: '#' }
+                ].map((social) => (
+                  <a
+                    key={social.name}
+                    href={social.href}
+                    className="block text-sm font-medium text-text-muted-light dark:text-text-muted-dark hover:text-text-main-light dark:hover:text-white transition-colors hover:translate-x-1 transform duration-200"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    {social.name}
+                  </a>
+                ))}
+              </div>
+            </div>
+
           </div>
-
         </div>
 
-        {/* COPYRIGHT */}
-        <div className="text-center pt-6 border-t border-gray-200 dark:border-gray-800">
-          <p className="text-[10px] sm:text-xs text-text-muted-light dark:text-text-muted-dark font-medium tracking-wide">
-            © 2025 White Noroh Studio. Proudly created with Passion.
-          </p>
+        {/* Bottom Bar */}
+        <div className="border-t border-gray-200 dark:border-gray-800 py-8">
+          <div className="flex flex-col md:flex-row justify-between items-center gap-4">
+            <p className="text-xs text-text-muted-light dark:text-text-muted-dark font-medium tracking-wide">
+              © 2025 White Noroh Studio. All rights reserved.
+            </p>
+            <div className="flex items-center gap-6">
+              <Link 
+                href="/privacy" 
+                className="text-xs text-text-muted-light dark:text-text-muted-dark hover:text-text-main-light dark:hover:text-white transition-colors"
+              >
+                Privacy Policy
+              </Link>
+              <Link 
+                href="/terms" 
+                className="text-xs text-text-muted-light dark:text-text-muted-dark hover:text-text-main-light dark:hover:text-white transition-colors"
+              >
+                Terms of Service
+              </Link>
+              <div className="text-xs text-text-muted-light dark:text-text-muted-dark">
+                Crafted with passion
+              </div>
+            </div>
+          </div>
         </div>
+
       </div>
     </footer>
   )

@@ -195,7 +195,7 @@ export default function ExpertiseSection() {
               <div className="h-48 overflow-hidden relative">
                 <Link 
                   href={getServiceSlug(
-                    "https://lh3.googleusercontent.com/aida-public/AB6AXuC3I8DtUBjW7TvduAVqVUdvtrulJ90wTkngG8GV-MjYAp96k_bBHb3EFt_gQy08JHSj-KFPdfKh4vvHvnnShGfLd_rV48BvJHBjo_TTN3Lz3h68ihU4cA36_jdh4HJoAdQiFZTo9alkWwdD_4J6ha34mTs8N0e1NBakaG2M2EU6kukJj59BDI2YnK_pD_ms2SREJWbIAPBKAMyvaosG6Kgd--HZnWzEFd4sEAo_Dqw0yNRIiGM43AVgnpCYCivP10gmE8rKlDCqnfI",
+                    "/Exhibition/Exhibition Approach.png",
                     "Exhibition Design"
                   )}
                   className="block w-full h-full relative"
@@ -204,7 +204,7 @@ export default function ExpertiseSection() {
                   <Image 
                     alt="Modern art gallery exhibition space" 
                     className="card-img w-full h-full object-cover transition-transform duration-700 ease-out grayscale group-hover:grayscale-0 hover:scale-105" 
-                    src="https://lh3.googleusercontent.com/aida-public/AB6AXuC3I8DtUBjW7TvduAVqVUdvtrulJ90wTkngG8GV-MjYAp96k_bBHb3EFt_gQy08JHSj-KFPdfKh4vvHvnnShGfLd_rV48BvJHBjo_TTN3Lz3h68ihU4cA36_jdh4HJoAdQiFZTo9alkWwdD_4J6ha34mTs8N0e1NBakaG2M2EU6kukJj59BDI2YnK_pD_ms2SREJWbIAPBKAMyvaosG6Kgd--HZnWzEFd4sEAo_Dqw0yNRIiGM43AVgnpCYCivP10gmE8rKlDCqnfI"
+                    src="/Exhibition/Exhibition Approach.png"
                     fill
                     sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
                     style={{ objectFit: 'cover' }}
@@ -235,7 +235,7 @@ export default function ExpertiseSection() {
               <div className="h-48 overflow-hidden relative">
                 <Link 
                   href={getServiceSlug(
-                    "https://lh3.googleusercontent.com/aida-public/AB6AXuD6RT4BHoC8cjTTYovp_UPlJ7_evAqxNNmwzQF_A4K9C2HQp_Vw7px9XUQXB0yQPBwJXsr0m44jLxOMCmD2XWgIJ_QuMpwnV2yIKgs-drQHinNYlmGwU1snlDs5uwIa2bT4zbut8eM39nGt-wB9FyQDDdPEy43eXx2AK4I-uUFoR86aNfuqwwvy65Vr47jWHDeeEhzvur8ZCyptAfMl5lO6RXrLQwoCr863yCrCMb52qVF-ZjN6vWiHC_d_q9iaIZf_doaefUc57qU",
+                    "/social media.jpg",
                     "Social Media"
                   )}
                   className="block w-full h-full relative"
@@ -244,7 +244,7 @@ export default function ExpertiseSection() {
                   <Image 
                     alt="Smartphone displaying social media apps" 
                     className="card-img w-full h-full object-cover transition-transform duration-700 ease-out grayscale group-hover:grayscale-0 hover:scale-105" 
-                    src="https://lh3.googleusercontent.com/aida-public/AB6AXuD6RT4BHoC8cjTTYovp_UPlJ7_evAqxNNmwzQF_A4K9C2HQp_Vw7px9XUQXB0yQPBwJXsr0m44jLxOMCmD2XWgIJ_QuMpwnV2yIKgs-drQHinNYlmGwU1snlDs5uwIa2bT4zbut8eM39nGt-wB9FyQDDdPEy43eXx2AK4I-uUFoR86aNfuqwwvy65Vr47jWHDeeEhzvur8ZCyptAfMl5lO6RXrLQwoCr863yCrCMb52qVF-ZjN6vWiHC_d_q9iaIZf_doaefUc57qU"
+                    src="/social media.jpg"
                     fill
                     sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
                     style={{ objectFit: 'cover' }}

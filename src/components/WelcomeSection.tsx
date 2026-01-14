@@ -1,7 +1,7 @@
 export default function WelcomeSection() {
   return (
     <section id="about" className="pt-24 pb-5 bg-background-light dark:bg-background-dark text-center">
-      <div className="container mx-auto px-4 max-w-4xl">
+      <div className="container mx-auto px-4 max-w-5xl">
         {/* Use font-futura-md class for "Welcome to the studio" */}
         <h2 className="font-futura-md text-4xl md:text-5xl text-text-main-light mb-6 font-bold tracking-tight">
           Welcome to the studio

@@ -1,4 +1,4 @@
-import ContactSection from "@/components/ContactSection";
+// import ContactSection from "@/components/ContactSection";
 import ExpertiseSection from "@/components/Expertisesection";
 import HeroSection from "@/components/HeroSection";
 import PortfolioSection from "@/components/PortfolioSection";
@@ -16,7 +16,7 @@ export default function Home() {
 
         <ExpertiseSection />
 
-        <ContactSection />
+        {/* <ContactSection /> */}
       </main>
       {/* <ThemeToggle />
       <ChatButton /> */}

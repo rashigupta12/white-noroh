@@ -107,41 +107,78 @@
       },
       
       // Additional 5 team members for full stack, Shopify, WordPress, React, hybrid apps
-      {
-        "name": "Rahul Verma",
-        "designation": "Senior Full Stack Developer",
-        "image": "/team/rahul-verma.jpg",
-        "bio": "12+ years experience in MERN stack development and scalable application architecture",
-        "specialization": ["React", "Node.js", "MongoDB", "AWS", "REST APIs"]
-      },
-      {
-        "name": "Anjali Mehta",
-        "designation": "Shopify Expert",
-        "image": "/team/anjali-mehta.jpg",
-        "bio": "8+ years specializing in Shopify store development, customization, and optimization",
-        "specialization": ["Shopify Plus", "Liquid", "App Development", "E-commerce Strategy"]
-      },
-      {
-        "name": "Vikram Singh",
-        "designation": "WordPress Specialist",
-        "image": "/team/vikram-singh.jpg",
-        "bio": "10+ years building custom WordPress solutions, themes, and plugins",
-        "specialization": ["WordPress Development", "PHP", "WooCommerce", "Custom Plugins"]
-      },
-      {
-        "name": "Neha Patel",
-        "designation": "React Native Developer",
-        "image": "/team/neha-patel.jpg",
-        "bio": "7+ years experience in hybrid and cross-platform mobile application development",
-        "specialization": ["React Native", "iOS/Android", "Hybrid Apps", "Mobile UI/UX"]
-      },
-      {
-        "name": "Karan Malhotra",
-        "designation": "Frontend Architect",
-        "image": "/team/karan-malhotra.jpg",
-        "bio": "9+ years specializing in modern frontend frameworks and performance optimization",
-        "specialization": ["React", "Vue.js", "TypeScript", "PWA", "Performance Optimization"]
-      }
+      // Additional 5 team members for full stack, Shopify, WordPress, React, hybrid apps
+{
+  name: "Atul",
+  designation: "Senior Full Stack Developer",
+  image: "/team/rahul-verma.jpg",
+  bio: "5+ years of experience building scalable web applications using the MERN stack, with strong expertise in backend architecture and cloud deployment.",
+  specialization: [
+    "React",
+    "Node.js",
+    "MongoDB",
+    "Express.js",
+    "REST APIs",
+    "AWS",
+    "System Architecture"
+  ]
+},
+{
+  name: "Aditya Verma",
+  designation: "Shopify Expert",
+  image: "/team/anjali-mehta.jpg",
+  bio: "3+ years of experience in developing, customizing, and optimizing Shopify and Shopify Plus stores for high-conversion eCommerce businesses.",
+  specialization: [
+    "Shopify",
+    "Shopify Plus",
+    "Liquid",
+    "Custom Theme Development",
+    "Shopify Apps",
+    "E-commerce Optimization"
+  ]
+},
+{
+  name: "Ashutosh Mishra",
+  designation: "Team Lead",
+  image: "/team/vikram-singh.jpg",
+  bio: "Experienced Team Lead with 3+ years of managing cross-functional development teams, ensuring timely delivery, quality control, and technical guidance.",
+  specialization: [
+    "Team Management",
+    "Project Planning",
+    "Code Review",
+    "Client Coordination",
+    "Agile & Scrum"
+  ]
+},
+{
+  name: "Rashi Gupta",
+  designation: "MERN Stack Developer",
+  image: "/team/neha-patel.jpg",
+  bio: "3+ years of experience developing full-stack web applications using the MERN stack with a focus on clean UI, performance, and scalable APIs.",
+  specialization: [
+    "React",
+    "Node.js",
+    "Express.js",
+    "MongoDB",
+    "REST APIs",
+    "Frontend Optimization"
+  ]
+},
+{
+  name: "Anurag",
+  designation: "MERN Stack Developer",
+  image: "/team/karan-malhotra.jpg",
+  bio: "3+ years of experience building modern, high-performance web applications with a strong focus on frontend architecture and responsive design.",
+  specialization: [
+    "React",
+    "JavaScript",
+    "TypeScript",
+    "Frontend Architecture",
+    "Performance Optimization",
+    "PWA"
+  ]
+}
+
     ]
   },
     {
@@ -200,7 +237,7 @@
       "description": "We create memorable spatial experiences for trade shows and events. Merging functionality with aesthetic appeal.",
       "fullDescription": "Exhibition design is where brand identity meets physical space. Our team specializes in creating immersive environments that not only attract attention but also facilitate meaningful interactions. From concept to installation, we handle every aspect of your exhibition presence.",
       "icon": "Store",
-      "heroImage": "https://lh3.googleusercontent.com/aida-public/AB6AXuC3I8DtUBjW7TvduAVqVUdvtrulJ90wTkngG8GV-MjYAp96k_bBHb3EFt_gQy08JHSj-KFPdfKh4vvHvnnShGfLd_rV48BvJHBjo_TTN3Lz3h68ihU4cA36_jdh4HJoAdQiFZTo9alkWwdD_4J6ha34mTs8N0e1NBakaG2M2EU6kukJj59BDI2YnK_pD_ms2SREJWbIAPBKAMyvaosG6Kgd--HZnWzEFd4sEAo_Dqw0yNRIiGM43AVgnpCYCivP10gmE8rKlDCqnfI",
+      "heroImage": "/Exhibition/Exhibition Approach.png",
       "services": [
         "Stall Design",
         "Spatial Planning",
