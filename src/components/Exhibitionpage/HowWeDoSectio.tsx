@@ -34,7 +34,7 @@ const HowWeDoSection = () => {
       <div className="max-w-7xl mx-auto">
         {/* Section Header */}
         <div className="text-center ">
-          <h2 className="font-futura-md text-4xl md:text-5xl text-text-main-light mb-6 font-bold tracking-tight">
+          <h2 className="font-futura-md text-4xl md:text-5xl text-text-main-light mb-6 font-semibold tracking-tight">
             How we do
           </h2>
       

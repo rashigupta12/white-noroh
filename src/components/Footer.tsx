@@ -100,6 +100,13 @@ export default function Footer() {
                   <Phone className="w-4 h-4" />
                   <span className="underline-offset-4 hover:underline">+91 9389495430</span>
                 </a>
+                <a
+                  href="tel:+917840079095"
+                  className="flex items-center gap-3 text-sm hover:text-text-main-light dark:hover:text-white transition-colors group"
+                >
+                  <Phone className="w-4 h-4" />
+                  <span className="underline-offset-4 hover:underline">+91 78400 79095</span>
+                </a>
               </div>
             </div>
           </div>

@@ -35,7 +35,7 @@ export default function ExpertiseSection() {
       <main id="service" className="pt-24 pb-20">
        <section className="max-w-4xl mx-auto px-6 text-center mb-20 fade-in-up">
   {/* Use font-futura-md class for "Our Expertise" */}
-  <h2 className="font-futura-md text-4xl md:text-5xl text-text-main-light mb-6 font-bold tracking-tight">
+  <h2 className="font-futura-md text-4xl md:text-5xl text-text-main-light mb-6 font-semibold tracking-tight">
     Our Expertise
   </h2>
   <p className="text-text-muted-light dark:text-text-muted-dark leading-relaxed max-w-2xl mx-auto text-base md:text-lg font-sans">
