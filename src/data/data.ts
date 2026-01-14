@@ -278,7 +278,7 @@
       "description": "Establish your authority. Strategic approach to LinkedIn and social media for consistent brand growth.",
       "fullDescription": "Social media is more than just posting content—it's about building relationships, establishing thought leadership, and driving meaningful engagement. Our social media team develops data-driven strategies that align with your business goals and resonate with your target audience.",
       "icon": "TrendingUp",
-      "heroImage": "https://lh3.googleusercontent.com/aida-public/AB6AXuD6RT4BHoC8cjTTYovp_UPlJ7_evAqxNNmwzQF_A4K9C2HQp_Vw7px9XUQXB0yQPBwJXsr0m44jLxOMCmD2XWgIJ_QuMpwnV2yIKgs-drQHinNYlmGwU1snlDs5uwIa2bT4zbut8eM39nGt-wB9FyQDDdPEy43eXx2AK4I-uUFoR86aNfuqwwvy65Vr47jWHDeeEhzvur8ZCyptAfMl5lO6RXrLQwoCr863yCrCMb52qVF-ZjN6vWiHC_d_q9iaIZf_doaefUc57qU",
+      "heroImage": "/social media.jpg",
       "services": [
         "Content Strategy",
         "Analytics",
