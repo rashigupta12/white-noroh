@@ -4,11 +4,11 @@ import React from "react";
 const SomeWorkSection = () => {
   // Array of your banner images from public folder
   const workBanners = [
-    "/Exhibition/Exhibition work 1.png",  // Replace with your actual image paths
+    "/Exhibition/Exhibition work 1.png", // Replace with your actual image paths
     "/Exhibition/Exhibition work 2.png",
     "/Exhibition/Exhibition work 3.png",
-     "/Exhibition/Exhibition work 4.png",
-      "/Exhibition/Exhibition work 5.png",
+    "/Exhibition/Exhibition work 4.png",
+    "/Exhibition/Exhibition work 5.png",
   ];
 
   return (
@@ -16,7 +16,7 @@ const SomeWorkSection = () => {
       <div className="max-w-7xl mx-auto">
         {/* Section Header */}
         <div className="text-center">
-          <h2 className="font-futura-md text-4xl md:text-5xl text-text-main-light mb-6 font-semibold tracking-tight">
+          <h2 className="font-futura-md text-4xl md:text-5xl text-text-main-light mb-6 font-medium tracking-tight">
             Some Work
           </h2>
         </div>

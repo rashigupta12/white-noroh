@@ -1,4 +1,4 @@
-import React from 'react';
+import React from "react";
 
 const WhatWeDoSection = () => {
   const services = [
@@ -12,8 +12,8 @@ const WhatWeDoSection = () => {
         "Fashion Shows & Events",
         "Rewards & Recognition Events",
         "Artiste & Celebrity Management",
-        "Special Event"
-      ]
+        "Special Event",
+      ],
     },
     {
       title: "EXHIBITIONS",
@@ -22,8 +22,8 @@ const WhatWeDoSection = () => {
         "Stall Fabrication",
         "Stall Management",
         "Logistics",
-        "Special Event"
-      ]
+        "Special Event",
+      ],
     },
     {
       title: "ACTIVATION",
@@ -31,8 +31,8 @@ const WhatWeDoSection = () => {
         "Malls and market Promotions",
         "Road shows",
         "Sampling",
-        "Sales Driven Promotions"
-      ]
+        "Sales Driven Promotions",
+      ],
     },
     // {
     //   title: "EXHIBITIONS",
@@ -51,7 +51,7 @@ const WhatWeDoSection = () => {
       <div className="max-w-7xl mx-auto">
         {/* Section Header */}
         <div className="text-center">
-          <h2 className="font-futura-md text-4xl md:text-5xl text-text-main-light mb-6 font-semibold tracking-tight">
+          <h2 className="font-futura-md text-4xl md:text-5xl text-text-main-light mb-6 font-medium tracking-tight">
             What we do
           </h2>
         </div>
@@ -86,7 +86,6 @@ const WhatWeDoSection = () => {
             </div>
           ))}
         </div>
-
       </div>
     </section>
   );

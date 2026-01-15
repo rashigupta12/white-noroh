@@ -1,5 +1,5 @@
 //components/expertisesection.tsx
-'use client'
+"use client";
 
 import {
   ArrowRight,
@@ -13,42 +13,45 @@ import {
   Terminal,
   TrendingUp,
   Video,
-  Volume2
-} from 'lucide-react';
-import Image from 'next/image';
-import Link from 'next/link';
-import { services } from '@/data/data'; // Import the services data
+  Volume2,
+} from "lucide-react";
+import Image from "next/image";
+import Link from "next/link";
+import { services } from "@/data/data"; // Import the services data
 
 export default function ExpertiseSection() {
   // Function to find service by image URL or title
   const getServiceSlug = (imageUrl: string, title: string) => {
     // Try to find by image URL first
-    const service = services.find(s => 
-      s.heroImage === imageUrl || 
-      s.title.toLowerCase().includes(title.toLowerCase())
+    const service = services.find(
+      (s) =>
+        s.heroImage === imageUrl ||
+        s.title.toLowerCase().includes(title.toLowerCase())
     );
-    return service ? `/service/${service.id}` : '/services';
+    return service ? `/service/${service.id}` : "/services";
   };
 
   return (
     <>
       <main id="service" className="pt-24 pb-20">
-       <section className="max-w-4xl mx-auto px-6 text-center mb-20 fade-in-up">
-  {/* Use font-futura-md class for "Our Expertise" */}
-  <h2 className="font-futura-md text-4xl md:text-5xl text-text-main-light mb-6 font-semibold tracking-tight">
-    Our Expertise
-  </h2>
-  <p className="text-text-muted-light dark:text-text-muted-dark leading-relaxed max-w-2xl mx-auto text-base md:text-lg font-sans">
-    We craft digital experiences and brand identities with a focus on simplicity, elegance, and purpose. From technical foundations to creative storytelling, we offer a holistic suite of services to elevate your brand.
-  </p>
-</section>
+        <section className="max-w-4xl mx-auto px-6 text-center mb-20 fade-in-up">
+          {/* Use font-futura-md class for "Our Expertise" */}
+          <h2 className="font-futura-md text-4xl md:text-5xl text-text-main-light mb-6 font-medium tracking-tight">
+            Our Expertise
+          </h2>
+          <p className="text-text-muted-light dark:text-text-muted-dark leading-relaxed max-w-2xl mx-auto text-base md:text-lg font-sans">
+            We craft digital experiences and brand identities with a focus on
+            simplicity, elegance, and purpose. From technical foundations to
+            creative storytelling, we offer a holistic suite of services to
+            elevate your brand.
+          </p>
+        </section>
         <div className="max-w-7xl mx-auto px-6">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6 lg:gap-8 mb-8">
-            
             {/* Brand & Creative Card */}
             <div className="group service-card bg-surface-light dark:bg-surface-dark rounded-2xl border border-gray-100 dark:border-zinc-800 overflow-hidden hover:shadow-2xl hover:shadow-primary/5 transition-all duration-500 fade-in-up delay-100 flex flex-col h-full">
               <div className="h-64 overflow-hidden relative">
-                <Link 
+                <Link
                   href={getServiceSlug(
                     "https://lh3.googleusercontent.com/aida-public/AB6AXuDoPXfvQeboRXEs_DKX_L5_OOrJ39OXg-3XJGjYL8NolgtmGCuTHuhI9xsdwc4OWQG3IMvM0AlBtp2AIb0bHSxfK1h518TTDyMcEFCbAG43JWIIXfaZlqSnrcW6BDRjsffZlcDaMoXx692ZV8-hQ2tVk0D23zrnPesJLl8kz0MpMtMLMLJD6DglnbP9QnfAnOxxN06z_DL-PSIZV2FHyctdbIeBpyklAugAlwGpkC6-EmSli3bPSNhHy-cR-CCjljEj3IiRTJm4lU4",
                     "Brand & Creative"
@@ -56,13 +59,13 @@ export default function ExpertiseSection() {
                   className="block w-full h-full relative"
                 >
                   <div className="absolute inset-0 bg-primary/10 z-10 mix-blend-multiply transition-opacity group-hover:opacity-0"></div>
-                  <Image 
-                    alt="Various branding materials laid out on a table" 
-                    className="card-img w-full h-full object-cover transition-transform duration-700 ease-out grayscale group-hover:grayscale-0 hover:scale-105" 
+                  <Image
+                    alt="Various branding materials laid out on a table"
+                    className="card-img w-full h-full object-cover transition-transform duration-700 ease-out grayscale group-hover:grayscale-0 hover:scale-105"
                     src="https://lh3.googleusercontent.com/aida-public/AB6AXuDoPXfvQeboRXEs_DKX_L5_OOrJ39OXg-3XJGjYL8NolgtmGCuTHuhI9xsdwc4OWQG3IMvM0AlBtp2AIb0bHSxfK1h518TTDyMcEFCbAG43JWIIXfaZlqSnrcW6BDRjsffZlcDaMoXx692ZV8-hQ2tVk0D23zrnPesJLl8kz0MpMtMLMLJD6DglnbP9QnfAnOxxN06z_DL-PSIZV2FHyctdbIeBpyklAugAlwGpkC6-EmSli3bPSNhHy-cR-CCjljEj3IiRTJm4lU4"
                     fill
                     sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-                    style={{ objectFit: 'cover' }}
+                    style={{ objectFit: "cover" }}
                   />
                   <div className="absolute top-6 left-6 z-20 bg-white dark:bg-surface-dark/90 backdrop-blur-sm p-3 rounded-xl border border-gray-100 dark:border-zinc-700 shadow-sm">
                     <Palette className="text-text-main-light w-6 h-6" />
@@ -71,39 +74,51 @@ export default function ExpertiseSection() {
                 </Link>
               </div>
               <div className="p-8 flex-1 flex flex-col">
-                <span className="text-text-muted-light text-xs font-extrabold tracking-[0.2em] uppercase mb-3 block">Identity & Vision</span>
-                <h3 className="font-display text-2xl md:text-3xl mb-4 text-text-main-light dark:text-white font-bold">Brand & Creative</h3>
+                <span className="text-text-muted-light text-xs font-extrabold tracking-[0.2em] uppercase mb-3 block">
+                  Identity & Vision
+                </span>
+                <h3 className="font-display text-2xl md:text-3xl mb-4 text-text-main-light dark:text-white font-bold">
+                  Brand & Creative
+                </h3>
                 <p className="text-text-muted-light dark:text-text-muted-dark mb-8 text-sm leading-relaxed flex-1">
-                  Transforming abstract ideas into tangible visual languages. Our design philosophy centers on minimalism and timeless aesthetics.
+                  Transforming abstract ideas into tangible visual languages.
+                  Our design philosophy centers on minimalism and timeless
+                  aesthetics.
                 </p>
                 <div className="border-t border-gray-100 dark:border-zinc-800 pt-6 mt-auto">
                   <ul className="grid grid-cols-1 sm:grid-cols-2 gap-3 text-sm text-text-main-light dark:text-gray-300">
-                    <li className="flex items-center gap-2"><Check className="text-text-muted-light w-4 h-4" /> Logo & Identity</li>
-                    <li className="flex items-center gap-2"><Check className="text-text-muted-light w-4 h-4" /> Art Direction</li>
-                    <li className="flex items-center gap-2"><Check className="text-text-muted-light w-4 h-4" /> Packaging</li>
+                    <li className="flex items-center gap-2">
+                      <Check className="text-text-muted-light w-4 h-4" /> Logo &
+                      Identity
+                    </li>
+                    <li className="flex items-center gap-2">
+                      <Check className="text-text-muted-light w-4 h-4" /> Art
+                      Direction
+                    </li>
+                    <li className="flex items-center gap-2">
+                      <Check className="text-text-muted-light w-4 h-4" />{" "}
+                      Packaging
+                    </li>
                   </ul>
                 </div>
               </div>
             </div>
-            
+
             {/* IT Services Card */}
             <div className="group service-card bg-surface-light dark:bg-surface-dark rounded-2xl border border-gray-100 dark:border-zinc-800 overflow-hidden hover:shadow-2xl hover:shadow-primary/5 transition-all duration-500 fade-in-up delay-100 flex flex-col h-full">
               <div className="h-64 overflow-hidden relative">
-                <Link 
-                  href={getServiceSlug(
-                    "/itservice/hero.jpeg",
-                    "IT Services"
-                  )}
+                <Link
+                  href={getServiceSlug("/itservice/hero.jpeg", "IT Services")}
                   className="block w-full h-full relative"
                 >
                   <div className="absolute inset-0 bg-primary/10 z-10 mix-blend-multiply transition-opacity group-hover:opacity-0"></div>
-                  <Image 
-                    alt="Minimalist coding setup on a laptop" 
-                    className="card-img w-full h-full object-cover transition-transform duration-700 ease-out grayscale group-hover:grayscale-0 hover:scale-105" 
+                  <Image
+                    alt="Minimalist coding setup on a laptop"
+                    className="card-img w-full h-full object-cover transition-transform duration-700 ease-out grayscale group-hover:grayscale-0 hover:scale-105"
                     src="/itservice/hero.jpeg"
                     fill
                     sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-                    style={{ objectFit: 'cover' }}
+                    style={{ objectFit: "cover" }}
                   />
                   <div className="absolute top-6 left-6 z-20 bg-white dark:bg-surface-dark/90 backdrop-blur-sm p-3 rounded-xl border border-gray-100 dark:border-zinc-700 shadow-sm">
                     <Terminal className="text-text-main-light w-6 h-6" />
@@ -112,27 +127,42 @@ export default function ExpertiseSection() {
                 </Link>
               </div>
               <div className="p-8 flex-1 flex flex-col">
-                <span className="text-text-muted-light text-xs font-extrabold tracking-[0.2em] uppercase mb-3 block">Technical Foundation</span>
-                <h3 className="font-display text-2xl md:text-3xl mb-4 text-text-main-light dark:text-white font-bold">IT Services</h3>
+                <span className="text-text-muted-light text-xs font-extrabold tracking-[0.2em] uppercase mb-3 block">
+                  Technical Foundation
+                </span>
+                <h3 className="font-display text-2xl md:text-3xl mb-4 text-text-main-light dark:text-white font-bold">
+                  IT Services
+                </h3>
                 <p className="text-text-muted-light dark:text-text-muted-dark mb-8 text-sm leading-relaxed flex-1">
-                  Building the backbone of your digital presence. We specialize in creating robust, scalable, and secure web architectures tailored to your specific business needs.
+                  Building the backbone of your digital presence. We specialize
+                  in creating robust, scalable, and secure web architectures
+                  tailored to your specific business needs.
                 </p>
                 <div className="border-t border-gray-100 dark:border-zinc-800 pt-6 mt-auto">
                   <ul className="grid grid-cols-1 sm:grid-cols-2 gap-3 text-sm text-text-main-light dark:text-gray-300">
-                    <li className="flex items-center gap-2"><Check className="text-text-muted-light w-4 h-4" /> Custom Web Dev</li>
-                    <li className="flex items-center gap-2"><Check className="text-text-muted-light w-4 h-4" /> E-commerce</li>
-                    <li className="flex items-center gap-2"><Check className="text-text-muted-light w-4 h-4" /> CMS Integration</li>
+                    <li className="flex items-center gap-2">
+                      <Check className="text-text-muted-light w-4 h-4" /> Custom
+                      Web Dev
+                    </li>
+                    <li className="flex items-center gap-2">
+                      <Check className="text-text-muted-light w-4 h-4" />{" "}
+                      E-commerce
+                    </li>
+                    <li className="flex items-center gap-2">
+                      <Check className="text-text-muted-light w-4 h-4" /> CMS
+                      Integration
+                    </li>
                   </ul>
                 </div>
               </div>
             </div>
           </div>
-          
+
           {/* Media & Sound Card - Full Width */}
           <div className="w-full mb-10 bg-surface-light dark:bg-surface-dark rounded-2xl border border-gray-100 dark:border-zinc-800 overflow-hidden hover:shadow-xl transition-all duration-500">
             {/* Image Section */}
             <div className="relative w-full h-55 md:h-65 overflow-hidden">
-              <Link 
+              <Link
                 href={getServiceSlug(
                   "https://lh3.googleusercontent.com/aida-public/AB6AXuDdrkHmQTrt3EQh8WSSq4zcO_UL0sdX262czsY_pZ5OSocfQ8K8XkLlTIFpef5d9BwnDV9z2ewcFcqdo4x9i3Ba0nPnEKi6WJWLV1GLyU4sd3VTdv-GhOJprG6xSUeV5pDT2orDYrEyVZoAfldZ8dPVZGCWFFwZROV50wyZxkMndf4QQ55UjRtC6qTdAaAGJ-IprdZDC7en6NMEnuYDAxRuOvwb1n9Nb5s1hgbtgJ9uvUId0CYmkO9BSOtZRPr48GWgF-g2fsdI8zg",
                   "Media & Sound"
@@ -145,7 +175,7 @@ export default function ExpertiseSection() {
                   className="w-full h-full object-cover grayscale hover:grayscale-0 hover:scale-105 transition-all duration-700"
                   fill
                   sizes="100vw"
-                  style={{ objectFit: 'cover' }}
+                  style={{ objectFit: "cover" }}
                 />
                 <div className="absolute inset-0 bg-black/0 hover:bg-black/10 transition-colors duration-300"></div>
               </Link>
@@ -162,9 +192,9 @@ export default function ExpertiseSection() {
               </h3>
 
               <p className="text-text-muted-light dark:text-text-muted-dark text-sm md:text-base leading-relaxed max-w-3xl mb-8">
-                Captivate your audience through immersive media. From crisp photography
-                to professional sound engineering, we ensure your message is seen and
-                heard clearly with cinematic quality.
+                Captivate your audience through immersive media. From crisp
+                photography to professional sound engineering, we ensure your
+                message is seen and heard clearly with cinematic quality.
               </p>
 
               {/* Services */}
@@ -186,14 +216,13 @@ export default function ExpertiseSection() {
               </div>
             </div>
           </div>
-          
+
           {/* Bottom Row - 3 Cards */}
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
-            
             {/* Exhibition Design Card */}
             <div className="group service-card bg-surface-light dark:bg-surface-dark rounded-2xl border border-gray-100 dark:border-zinc-800 overflow-hidden hover:shadow-2xl hover:shadow-primary/5 transition-all duration-500 fade-in-up delay-300 flex flex-col h-full">
               <div className="h-48 overflow-hidden relative">
-                <Link 
+                <Link
                   href={getServiceSlug(
                     "/Exhibition/Exhibition Approach.png",
                     "Exhibition Design"
@@ -201,13 +230,13 @@ export default function ExpertiseSection() {
                   className="block w-full h-full relative"
                 >
                   <div className="absolute inset-0 bg-primary/10 z-10 mix-blend-multiply transition-opacity group-hover:opacity-0"></div>
-                  <Image 
-                    alt="Modern art gallery exhibition space" 
-                    className="card-img w-full h-full object-cover transition-transform duration-700 ease-out grayscale group-hover:grayscale-0 hover:scale-105" 
+                  <Image
+                    alt="Modern art gallery exhibition space"
+                    className="card-img w-full h-full object-cover transition-transform duration-700 ease-out grayscale group-hover:grayscale-0 hover:scale-105"
                     src="/Exhibition/Exhibition Approach.png"
                     fill
                     sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-                    style={{ objectFit: 'cover' }}
+                    style={{ objectFit: "cover" }}
                   />
                   <div className="absolute top-4 left-4 z-20 bg-surface-light/90 dark:bg-surface-dark/90 backdrop-blur-sm p-2 rounded-lg border border-gray-100 dark:border-zinc-700 shadow-sm">
                     <Store className="text-text-main-light w-5 h-5" />
@@ -216,38 +245,46 @@ export default function ExpertiseSection() {
                 </Link>
               </div>
               <div className="p-8 flex-1 flex flex-col">
-                <span className="text-text-muted-light text-xs font-extrabold tracking-[0.2em] uppercase mb-2 block">Spatial</span>
-                <h3 className="font-display text-xl md:text-2xl mb-4 text-text-main-light dark:text-white font-bold">Exhibition Design</h3>
+                <span className="text-text-muted-light text-xs font-extrabold tracking-[0.2em] uppercase mb-2 block">
+                  Spatial
+                </span>
+                <h3 className="font-display text-xl md:text-2xl mb-4 text-text-main-light dark:text-white font-bold">
+                  Exhibition Design
+                </h3>
                 <p className="text-text-muted-light dark:text-text-muted-dark mb-6 text-sm leading-relaxed flex-1">
-                  We create memorable spatial experiences for trade shows and events. Merging functionality with aesthetic appeal.
+                  We create memorable spatial experiences for trade shows and
+                  events. Merging functionality with aesthetic appeal.
                 </p>
                 <div className="border-t border-gray-100 dark:border-zinc-800 pt-4 mt-auto">
                   <ul className="space-y-2 text-sm text-text-main-light dark:text-gray-300">
-                    <li className="flex items-center gap-2"><ArrowRight className="text-text-muted-light w-4 h-4" /> Stall Design</li>
-                    <li className="flex items-center gap-2"><ArrowRight className="text-text-muted-light w-4 h-4" /> Spatial Planning</li>
+                    <li className="flex items-center gap-2">
+                      <ArrowRight className="text-text-muted-light w-4 h-4" />{" "}
+                      Stall Design
+                    </li>
+                    <li className="flex items-center gap-2">
+                      <ArrowRight className="text-text-muted-light w-4 h-4" />{" "}
+                      Spatial Planning
+                    </li>
                   </ul>
                 </div>
               </div>
             </div>
-            
+
             {/* Social Media Card */}
             <div className="group service-card bg-surface-light dark:bg-surface-dark rounded-2xl border border-gray-100 dark:border-zinc-800 overflow-hidden hover:shadow-2xl hover:shadow-primary/5 transition-all duration-500 fade-in-up delay-300 flex flex-col h-full">
               <div className="h-48 overflow-hidden relative">
-                <Link 
-                  href={getServiceSlug(
-                    "/social media.jpg",
-                    "Social Media"
-                  )}
+                <Link
+                  href={getServiceSlug("/social media.jpg", "Social Media")}
                   className="block w-full h-full relative"
                 >
                   <div className="absolute inset-0 bg-primary/20 z-10 mix-blend-multiply"></div>
-                  <Image 
-                    alt="Smartphone displaying social media apps" 
-                    className="card-img w-full h-full object-cover transition-transform duration-700 ease-out grayscale group-hover:grayscale-0 hover:scale-105" 
+                  <Image
+                    alt="Smartphone displaying social media apps"
+                    className="card-img w-full h-full object-cover transition-transform duration-700 ease-out grayscale group-hover:grayscale-0 hover:scale-105"
                     src="/social media.jpg"
                     fill
                     sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-                    style={{ objectFit: 'cover' }}
+                    style={{ objectFit: "cover" }}
                   />
                   <div className="absolute top-4 left-4 z-20 bg-surface-light/90 dark:bg-surface-dark/90 backdrop-blur-sm p-2 rounded-lg border border-gray-100 dark:border-zinc-700 shadow-sm">
                     <TrendingUp className="text-text-main-light w-5 h-5" />
@@ -256,37 +293,48 @@ export default function ExpertiseSection() {
                 </Link>
               </div>
               <div className="p-8 flex-1 flex flex-col">
-                <span className="text-text-muted-light text-xs font-extrabold tracking-[0.2em] uppercase mb-2 block">Growth</span>
-                <h3 className="font-display text-xl md:text-2xl mb-4 text-text-main-light dark:text-white font-bold">Social Media</h3>
+                <span className="text-text-muted-light text-xs font-extrabold tracking-[0.2em] uppercase mb-2 block">
+                  Growth
+                </span>
+                <h3 className="font-display text-xl md:text-2xl mb-4 text-text-main-light dark:text-white font-bold">
+                  Social Media
+                </h3>
                 <p className="text-text-muted-light dark:text-text-muted-dark mb-6 text-sm leading-relaxed flex-1">
-                  Establish your authority. Strategic approach to LinkedIn and social media for consistent brand growth.
+                  Establish your authority. Strategic approach to LinkedIn and
+                  social media for consistent brand growth.
                 </p>
                 <div className="border-t border-gray-100 dark:border-zinc-800 pt-4 mt-auto">
                   <ul className="space-y-2 text-sm text-text-main-light dark:text-gray-300">
-                    <li className="flex items-center gap-2"><FileEdit className="text-text-muted-light w-4 h-4" /> Content Strategy</li>
-                    <li className="flex items-center gap-2"><BarChart3 className="text-text-muted-light w-4 h-4" /> Analytics</li>
+                    <li className="flex items-center gap-2">
+                      <FileEdit className="text-text-muted-light w-4 h-4" />{" "}
+                      Content Strategy
+                    </li>
+                    <li className="flex items-center gap-2">
+                      <BarChart3 className="text-text-muted-light w-4 h-4" />{" "}
+                      Analytics
+                    </li>
                   </ul>
                 </div>
               </div>
             </div>
-            
+
             {/* Printing Solutions Card */}
             <div className="group service-card bg-surface-light dark:bg-surface-dark rounded-2xl border border-gray-100 dark:border-zinc-800 overflow-hidden hover:shadow-2xl hover:shadow-primary/5 transition-all duration-500 fade-in-up delay-300 flex flex-col h-full">
               <div className="h-48 overflow-hidden relative bg-gray-100 dark:bg-zinc-800 flex items-center justify-center">
-                <Link 
+                <Link
                   href={getServiceSlug(
                     "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTYsgSkUHRHR8XQIFGbpA5bx1CUwwDhY_ytEw&s",
                     "Printing Solutions"
                   )}
                   className="block w-full h-full relative"
                 >
-                   <Image 
-                    alt="Smartphone displaying social media apps" 
-                    className="card-img w-full h-full object-cover transition-transform duration-700 ease-out grayscale group-hover:grayscale-0 hover:scale-105" 
+                  <Image
+                    alt="Smartphone displaying social media apps"
+                    className="card-img w-full h-full object-cover transition-transform duration-700 ease-out grayscale group-hover:grayscale-0 hover:scale-105"
                     src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTYsgSkUHRHR8XQIFGbpA5bx1CUwwDhY_ytEw&s"
                     fill
                     sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-                    style={{ objectFit: 'cover' }}
+                    style={{ objectFit: "cover" }}
                   />
                   {/* <Printer className="text-text-muted-light/30 w-16 h-16" /> */}
                   <div className="absolute top-4 left-4 z-20 bg-surface-light/90 dark:bg-surface-dark/90 backdrop-blur-sm p-2 rounded-lg border border-gray-100 dark:border-zinc-700 shadow-sm">
@@ -296,15 +344,27 @@ export default function ExpertiseSection() {
                 </Link>
               </div>
               <div className="p-8 flex-1 flex flex-col">
-                <span className="text-text-muted-light text-xs font-extrabold tracking-[0.2em] uppercase mb-2 block">Tangible</span>
-                <h3 className="font-display text-xl md:text-2xl mb-4 text-text-main-light dark:text-white font-bold">Printing Solutions</h3>
+                <span className="text-text-muted-light text-xs font-extrabold tracking-[0.2em] uppercase mb-2 block">
+                  Tangible
+                </span>
+                <h3 className="font-display text-xl md:text-2xl mb-4 text-text-main-light dark:text-white font-bold">
+                  Printing Solutions
+                </h3>
                 <p className="text-text-muted-light dark:text-text-muted-dark mb-6 text-sm leading-relaxed flex-1">
-                  High-quality printing services for all your branding collateral. We bring your digital designs into the physical world with precision.
+                  High-quality printing services for all your branding
+                  collateral. We bring your digital designs into the physical
+                  world with precision.
                 </p>
                 <div className="border-t border-gray-100 dark:border-zinc-800 pt-4 mt-auto">
                   <ul className="space-y-2 text-sm text-text-main-light dark:text-gray-300">
-                    <li className="flex items-center gap-2"><Check className="text-text-muted-light w-4 h-4" /> Brochures & Flyers</li>
-                    <li className="flex items-center gap-2"><Check className="text-text-muted-light w-4 h-4" /> Business Cards</li>
+                    <li className="flex items-center gap-2">
+                      <Check className="text-text-muted-light w-4 h-4" />{" "}
+                      Brochures & Flyers
+                    </li>
+                    <li className="flex items-center gap-2">
+                      <Check className="text-text-muted-light w-4 h-4" />{" "}
+                      Business Cards
+                    </li>
                   </ul>
                 </div>
               </div>

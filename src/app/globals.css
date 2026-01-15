@@ -117,3 +117,16 @@ html {
 h1, h2, h3, h4, h5, h6 {
   font-family: var(--font-display), 'Futura Md BT', 'Futura', sans-serif;
 }
+
+@keyframes marquee {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+.animate-marquee {
+  animation: marquee 35s linear infinite;
+}

@@ -71,7 +71,8 @@ export default function PortfolioSection() {
                   src={src}
                   alt={`Portfolio Image ${index + 1}`}
                   fill
-                  className="object-contain object-center"
+                  className="object-contain md:object-cover object-center"
+
                   sizes="100vw"
                   priority={index === 0}
                 />
