@@ -1,6 +1,8 @@
 
 
+import MusicProductionSection from '@/components/media-sound/MusicProductionSection'
 import PhotoGallery from '@/components/media-sound/PhotoGallery'
+import VideographySection from '@/components/media-sound/Videography'
 import WhatWeDoSection from '@/components/media-sound/WhatWeDoSection'
 import React from 'react'
 
@@ -10,6 +12,8 @@ const BrandCreative = () => {
       <main>
         <WhatWeDoSection/>
         <PhotoGallery/>
+        <VideographySection/>
+        <MusicProductionSection/>
  
       </main>
       </div>

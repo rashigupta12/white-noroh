@@ -25,7 +25,7 @@ const WhatWeDoSection = () => {
     {
       title: "Sound & Music ",
       items: [
-        "Documentary Films",
+        "Documentary Films Background Score",
         "TV Commercials",
         "Background Sound",
         "Incidental Music",

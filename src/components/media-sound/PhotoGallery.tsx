@@ -1,13 +1,15 @@
+
 "use client";
 
-import Image from "next/image";
+
+import HorizontalGallery from "./HorizontalGallery";
 
 const photos = [
   "/media/1.jpg",
   "/media/1a.jpg",
   "/media/1c.jpg",
   "/media/1d.jpg",
-  "/media/1e.jpg",
+  "/media/1e.JPG",
   "/media/1f.jpg",
   "/media/2.jpg",
   "/media/2a.jpg",
@@ -44,28 +46,79 @@ const photos = [
   "/media/24.jpg",
 ];
 
-export default function PhotoGallery() {
+const events =[
+  "/media/events/1 (3).jpg",
+  "/media/events/1.jpg",
+  "/media/events/2.jpg",
+  "/media/events/3 (2).jpg",
+  "/media/events/3.jpg",
+  "/media/events/5.jpg",
+  "/media/events/6.jpg",
+  "/media/events/7.jpg",
+  "/media/events/8.jpg",
+  "/media/events/9.jpg",
+  "/media/events/10 (2).jpg",
+  "/media/events/10.jpg",
+  "/media/events/11 (3).jpg",
+  "/media/events/11.jpg",
+  "/media/events/12 (2).jpg",
+  "/media/events/12.jpg",
+  "/media/events/13 (2).jpg",
+  "/media/events/13.jpg",
+  "/media/events/14.jpg",
+  "/media/events/16.jpg",
+  "/media/events/17.jpg",
+  "/media/events/594A9828.jpg",
+  "/media/events/594A9875.jpg",
+  "/media/events/ed2.jpg",
+  "/media/events/Fashion shows1.jpg",
+  "/media/events/Fashionshows2.jpg",
+  "/media/events/Fashionshows3.jpg",
+  "/media/events/Indus1.jpg",
+  "/media/events/Indus2.jpg",
+  "/media/events/Indus3.jpg",
+  "/media/events/Indus4.jpg",
+  "/media/events/Indus5.jpg",
+  "/media/events/Indus7.tif",
+  "/media/events/Indus8.jpg",
+  "/media/events/AU.jpg",
+  "/media/events/BM.jpg"
+]
+
+
+export default function PhotoGalleryScroll() {
+  
   return (
-    <section className="w-full px-4 md:px-10 lg:px-16 py-20">
-      <div className="text-center ">
-        <h2 className="font-futura-md text-4xl md:text-5xl text-text-main-light mb-8 font-medium tracking-tight">
-          Photography
-        </h2>
+   <section className="w-full py-24 space-y-28 overflow-hidden">
+
+      {/* Photography */}
+      <div>
+        <div className="text-center mb-14">
+          <h1 className="font-futura-md text-4xl md:text-5xl text-text-main-light">
+            Photography
+          </h1>
+          <p className="mt-6 text-sm tracking-[0.3em] uppercase text-text-muted-light">
+            Fashion <span className="mx-2">•</span> Food <span className="mx-2">•</span> Product
+          </p>
+        </div>
+
+        <HorizontalGallery images={photos} />
       </div>
-      <div className="columns-1 sm:columns-2 lg:columns-3 gap-4">
-        {photos.map((src, index) => (
-          <div key={index} className="mb-4 break-inside-avoid overflow-hidden">
-            <Image
-              src={src}
-              alt={`Gallery image ${index + 1}`}
-              width={800}
-              height={1200}
-              className="w-full h-auto object-cover transition-transform duration-700 ease-out hover:scale-105"
-              loading="lazy"
-            />
-          </div>
-        ))}
+
+      {/* Events */}
+      <div>
+        <div className="text-center mb-14">
+          <h2 className="font-futura-md text-3xl md:text-4xl text-text-main-light">
+            Events & Commercial
+          </h2>
+          <p className="mt-6 text-sm tracking-[0.3em] uppercase text-text-muted-light">
+            Events <span className="mx-2">•</span> Industrial <span className="mx-2">•</span> Shows <span className="mx-2">•</span> Sports
+          </p>
+        </div>
+
+        <HorizontalGallery images={events} />
       </div>
+
     </section>
   );
 }

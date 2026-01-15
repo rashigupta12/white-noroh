@@ -24,8 +24,8 @@ export default function LogoMarquee() {
   return (
     <section className="pt-30 md:pt-20  relative overflow-hidden bg-white ">
        <div className="text-center">
-          <h2 className="font-futura-md text-4xl md:text-5xl text-text-main-light mb-6  tracking-tight">
-            Logo Designing
+          <h2 className="font-futura-md text-4xl md:text-4xl text-text-main-light mb-6  tracking-tight">
+            Logo Design
           </h2>
         </div>
       {/* Left fade – desktop only */}

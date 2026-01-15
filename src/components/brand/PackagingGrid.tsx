@@ -72,7 +72,7 @@ export default function PackagingGrid() {
         
         {/* Heading */}
         <div className="mb-12 text-center">
-          <h2 className="font-futura-md text-4xl md:text-5xl text-text-main-light tracking-tight">
+          <h2 className="font-futura-md text-4xl md:text-4xl text-text-main-light tracking-tight">
             Package Design
           </h2>
         </div>

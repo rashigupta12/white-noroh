@@ -35,7 +35,7 @@ const BrandingSection = () => {
         
         {/* Section Header */}
         <div className="text-center mb-10">
-          <h2 className="font-futura-md text-4xl md:text-5xl text-text-main-light tracking-tight">
+          <h2 className="font-futura-md text-4xl md:text-4xl text-text-main-light tracking-tight">
             Branding
           </h2>
         </div>
