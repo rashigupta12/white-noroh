@@ -13,7 +13,7 @@ export default function HeroSection() {
           <Image
             alt="Silver vase detail dark"
             className="object-cover w-full h-full opacity-80 group-hover:scale-105 transition-transform duration-700"
-            src="/banner.jpg"
+            src="/Home 2.png"
             fill
             sizes="(max-width: 768px) 100vw, 50vw"
             style={{ objectFit: 'cover' }}

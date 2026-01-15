@@ -8,6 +8,8 @@ const BrandingSection = () => {
   const workBanners = [
     "/branding/branding 1.png",
     "/branding/branding 2.png",
+    "/branding/branding 9.png",
+    "/branding/branding 10.png",
     "/branding/branding 3.png",
     "/branding/branding 4.png",
     "/branding/branding 5.png",

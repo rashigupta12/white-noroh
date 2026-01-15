@@ -34,12 +34,12 @@ export default function ExpertiseSection() {
   return (
     <>
       <main id="service" className="pt-24 pb-20">
-        <section className="max-w-4xl mx-auto px-6 text-center mb-20 fade-in-up">
+        <section className="max-w-5xl mx-auto px-6 text-center mb-20 fade-in-up">
           {/* Use font-futura-md class for "Our Expertise" */}
           <h2 className="font-futura-md text-4xl md:text-5xl text-text-main-light mb-6 font-medium tracking-tight">
             Our Expertise
           </h2>
-          <p className="text-text-muted-light dark:text-text-muted-dark leading-relaxed max-w-2xl mx-auto text-base md:text-lg font-sans">
+          <p className="text-text-muted-light dark:text-text-muted-dark leading-relaxed max-w-4xl mx-auto text-base md:text-lg font-sans">
             We craft digital experiences and brand identities with a focus on
             simplicity, elegance, and purpose. From technical foundations to
             creative storytelling, we offer a holistic suite of services to
@@ -77,7 +77,7 @@ export default function ExpertiseSection() {
                 <span className="text-text-muted-light text-xs font-extrabold tracking-[0.2em] uppercase mb-3 block">
                   Identity & Vision
                 </span>
-                <h3 className="font-display text-2xl md:text-3xl mb-4 text-text-main-light dark:text-white font-bold">
+                <h3 className="font-display text-2xl md:text-2xl mb-4 text-text-main-light dark:text-white font-semibold">
                   Brand & Creative
                 </h3>
                 <p className="text-text-muted-light dark:text-text-muted-dark mb-8 text-sm leading-relaxed flex-1">
@@ -130,7 +130,7 @@ export default function ExpertiseSection() {
                 <span className="text-text-muted-light text-xs font-extrabold tracking-[0.2em] uppercase mb-3 block">
                   Technical Foundation
                 </span>
-                <h3 className="font-display text-2xl md:text-3xl mb-4 text-text-main-light dark:text-white font-bold">
+                <h3 className="font-display text-2xl md:text-2xl mb-4 text-text-main-light dark:text-white font-semibold">
                   IT Services
                 </h3>
                 <p className="text-text-muted-light dark:text-text-muted-dark mb-8 text-sm leading-relaxed flex-1">
@@ -187,7 +187,7 @@ export default function ExpertiseSection() {
                 Media & Visual
               </span>
 
-              <h3 className="font-display text-2xl md:text-3xl font-bold text-text-main-light dark:text-white mb-4">
+              <h3 className="font-display text-2xl md:text-2xl font-semibold text-text-main-light dark:text-white mb-4">
                 Media & Sound
               </h3>
 
@@ -248,7 +248,7 @@ export default function ExpertiseSection() {
                 <span className="text-text-muted-light text-xs font-extrabold tracking-[0.2em] uppercase mb-2 block">
                   Spatial
                 </span>
-                <h3 className="font-display text-xl md:text-2xl mb-4 text-text-main-light dark:text-white font-bold">
+                <h3 className="font-display text-xl md:text-2xl mb-4 text-text-main-light dark:text-white font-semibold">
                   Exhibition Design
                 </h3>
                 <p className="text-text-muted-light dark:text-text-muted-dark mb-6 text-sm leading-relaxed flex-1">
@@ -296,7 +296,7 @@ export default function ExpertiseSection() {
                 <span className="text-text-muted-light text-xs font-extrabold tracking-[0.2em] uppercase mb-2 block">
                   Growth
                 </span>
-                <h3 className="font-display text-xl md:text-2xl mb-4 text-text-main-light dark:text-white font-bold">
+                <h3 className="font-display text-xl md:text-2xl mb-4 text-text-main-light dark:text-white font-semibold">
                   Social Media
                 </h3>
                 <p className="text-text-muted-light dark:text-text-muted-dark mb-6 text-sm leading-relaxed flex-1">
