@@ -1,4 +1,3 @@
-
 /* eslint-disable @typescript-eslint/no-explicit-any */
 "use client";
 
@@ -73,27 +72,16 @@ export default function HorizontalGallery({
             style={{ width: cardWidth, height: cardHeight }}
             whileHover={{ scale: 1.06, zIndex: 10 }}
           >
-            <div className="relative w-full h-full rounded-xl overflow-hidden shadow-xl">
-              {/* 🔹 IMAGE-COLORED BLUR BACKGROUND */}
+            <div className="relative w-full h-full rounded-xl overflow-hidden shadow-xl bg-gray-100 dark:bg-gray-800">
+              {/* Clean image with better quality and no blur */}
               <Image
                 src={src}
-                alt=""
+                alt={`Gallery image ${i + 1}`}
                 fill
-                priority={false}
-                quality={50}
-                className="object-cover scale-125 blur-3xl"
-              />
-
-              {/* 🔹 VERY LIGHT overlay (keeps color, removes harshness) */}
-              <div className="absolute inset-0 bg-black/10" />
-
-              {/* 🔹 FOREGROUND IMAGE (object-contain) */}
-              <Image
-                src={src}
-                alt=""
-                fill
-                quality={85}
-                className="object-contain relative z-10"
+                sizes={`(max-width: 768px) 100vw, ${cardWidth}px`}
+                quality={95}
+                className="object-cover"
+                priority={i < 3} // Only prioritize first few images for performance
               />
             </div>
           </motion.div>
