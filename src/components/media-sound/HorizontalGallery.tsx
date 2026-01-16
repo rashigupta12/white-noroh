@@ -1,4 +1,4 @@
-/* eslint-disable react-hooks/exhaustive-deps */
+
 /* eslint-disable @typescript-eslint/no-explicit-any */
 "use client";
 
@@ -9,17 +9,21 @@ import { ChevronLeft, ChevronRight } from "lucide-react";
 
 interface Props {
   images: string[];
+  cardWidth?: number;
+  cardHeight?: number;
 }
 
-export default function HorizontalGallery({ images }: Props) {
+export default function HorizontalGallery({ 
+  images, 
+  cardWidth = 320, 
+  cardHeight = 420 
+}: Props) {
   const loopImages = [...images, ...images, ...images];
   const x = useMotionValue(0);
   const animationRef = useRef<any>(null);
 
-  const CARD_WIDTH = 320;
-  const CARD_HEIGHT = 420;
   const GAP = 24;
-  const TOTAL_WIDTH = images.length * (CARD_WIDTH + GAP);
+  const TOTAL_WIDTH = images.length * (cardWidth + GAP);
 
   useEffect(() => {
     animationRef.current = animate(x, -TOTAL_WIDTH, {
@@ -30,7 +34,7 @@ export default function HorizontalGallery({ images }: Props) {
     });
 
     return () => animationRef.current?.stop();
-  }, []);
+  }, [TOTAL_WIDTH, x]);
 
   const pause = () => animationRef.current?.pause();
   const play = () => animationRef.current?.play();
@@ -38,7 +42,7 @@ export default function HorizontalGallery({ images }: Props) {
   const manualScroll = (dir: "left" | "right") => {
     pause();
     const current = x.get();
-    const delta = CARD_WIDTH + GAP;
+    const delta = cardWidth + GAP;
     animate(x, dir === "right" ? current - delta : current + delta, {
       duration: 0.4,
       ease: "easeOut",
@@ -55,47 +59,46 @@ export default function HorizontalGallery({ images }: Props) {
       >
         <ChevronLeft />
       </button>
-<motion.div
-  className="flex gap-6 px-6"
-  style={{ x }}
-  onHoverStart={pause}
-  onHoverEnd={play}
->
-  {loopImages.map((src, i) => (
-    <motion.div
-      key={i}
-      className="shrink-0 relative"
-      style={{ width: CARD_WIDTH, height: CARD_HEIGHT }}
-      whileHover={{ scale: 1.06, zIndex: 10 }}
-    >
-      <div className="relative w-full h-full rounded-xl overflow-hidden shadow-xl">
+      
+      <motion.div
+        className="flex gap-6 px-6"
+        style={{ x }}
+        onHoverStart={pause}
+        onHoverEnd={play}
+      >
+        {loopImages.map((src, i) => (
+          <motion.div
+            key={i}
+            className="shrink-0 relative"
+            style={{ width: cardWidth, height: cardHeight }}
+            whileHover={{ scale: 1.06, zIndex: 10 }}
+          >
+            <div className="relative w-full h-full rounded-xl overflow-hidden shadow-xl">
+              {/* 🔹 IMAGE-COLORED BLUR BACKGROUND */}
+              <Image
+                src={src}
+                alt=""
+                fill
+                priority={false}
+                quality={50}
+                className="object-cover scale-125 blur-3xl"
+              />
 
-        {/* 🔹 IMAGE-COLORED BLUR BACKGROUND */}
-        <Image
-          src={src}
-          alt=""
-          fill
-          priority={false}
-          quality={50}
-          className="object-cover scale-125 blur-3xl"
-        />
+              {/* 🔹 VERY LIGHT overlay (keeps color, removes harshness) */}
+              <div className="absolute inset-0 bg-black/10" />
 
-        {/* 🔹 VERY LIGHT overlay (keeps color, removes harshness) */}
-        <div className="absolute inset-0 bg-black/10" />
-
-        {/* 🔹 FOREGROUND IMAGE (object-contain) */}
-        <Image
-          src={src}
-          alt=""
-          fill
-          quality={85}
-          className="object-contain relative z-10"
-        />
-      </div>
-    </motion.div>
-  ))}
-</motion.div>
-
+              {/* 🔹 FOREGROUND IMAGE (object-contain) */}
+              <Image
+                src={src}
+                alt=""
+                fill
+                quality={85}
+                className="object-contain relative z-10"
+              />
+            </div>
+          </motion.div>
+        ))}
+      </motion.div>
 
       <button
         onClick={() => manualScroll("right")}

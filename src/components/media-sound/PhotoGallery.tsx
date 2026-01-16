@@ -1,6 +1,4 @@
-
 "use client";
-
 
 import HorizontalGallery from "./HorizontalGallery";
 
@@ -38,52 +36,36 @@ const photos = [
   "/media/31.jpg",
   "/media/32.jpg",
   "/media/33.jpg",
-
 ];
 
-const events =[
-
-
+const events = [
+  "/media/events/1.jpg",
+  "/media/events/2.jpg",
   "/media/events/3.jpg",
+  "/media/events/4.jpg",
   "/media/events/5.jpg",
   "/media/events/6.jpg",
   "/media/events/7.jpg",
   "/media/events/8.jpg",
   "/media/events/9.jpg",
-  "/media/events/10 (2).jpg",
   "/media/events/10.jpg",
-  "/media/events/11 (3).jpg",
   "/media/events/11.jpg",
-  "/media/events/12 (2).jpg",
   "/media/events/12.jpg",
-  "/media/events/13 (2).jpg",
   "/media/events/13.jpg",
   "/media/events/14.jpg",
+  "/media/events/15.jpg",
   "/media/events/16.jpg",
   "/media/events/17.jpg",
-  "/media/events/594A9828.jpg",
-  "/media/events/594A9875.jpg",
-  "/media/events/ed2.jpg",
-  "/media/events/Fashion shows1.jpg",
-  "/media/events/Fashionshows2.jpg",
-  "/media/events/Fashionshows3.jpg",
-  "/media/events/Indus1.jpg",
-  "/media/events/Indus2.jpg",
-  "/media/events/Indus3.jpg",
-  "/media/events/Indus4.jpg",
-  "/media/events/Indus5.jpg",
-  "/media/events/Indus7.tif",
-  "/media/events/Indus8.jpg",
-  "/media/events/AU.jpg",
-  "/media/events/BM.jpg"
-]
-
+  "/media/events/18.jpg",
+  "/media/events/19.jpg",
+  "/media/events/20.jpg",
+  "/media/events/21.jpg",
+];
 
 export default function PhotoGalleryScroll() {
   
   return (
-   <section className="w-full py-24 space-y-28 overflow-hidden">
-
+    <section className="w-full py-24 space-y-28 overflow-hidden">
       {/* Photography */}
       <div>
         <div className="text-center mb-14">
@@ -95,7 +77,11 @@ export default function PhotoGalleryScroll() {
           </p>
         </div>
 
-        <HorizontalGallery images={photos} />
+        <HorizontalGallery 
+          images={photos} 
+          cardWidth={320}
+          cardHeight={420}
+        />
       </div>
 
       {/* Events */}
@@ -109,9 +95,12 @@ export default function PhotoGalleryScroll() {
           </p>
         </div>
 
-        <HorizontalGallery images={events} />
+        <HorizontalGallery 
+          images={events} 
+          cardWidth={420}
+          cardHeight={320}
+        />
       </div>
-
     </section>
   );
 }
