@@ -44,13 +44,12 @@ const photos = [
   "/media/22.jpg",
   "/media/23a.jpg",
   "/media/24.jpg",
+  "/media/1 (3).jpg",
 ];
 
 const events =[
-  "/media/events/1 (3).jpg",
-  "/media/events/1.jpg",
-  "/media/events/2.jpg",
-  "/media/events/3 (2).jpg",
+
+
   "/media/events/3.jpg",
   "/media/events/5.jpg",
   "/media/events/6.jpg",

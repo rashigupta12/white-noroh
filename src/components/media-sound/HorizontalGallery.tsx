@@ -55,32 +55,47 @@ export default function HorizontalGallery({ images }: Props) {
       >
         <ChevronLeft />
       </button>
+<motion.div
+  className="flex gap-6 px-6"
+  style={{ x }}
+  onHoverStart={pause}
+  onHoverEnd={play}
+>
+  {loopImages.map((src, i) => (
+    <motion.div
+      key={i}
+      className="shrink-0 relative"
+      style={{ width: CARD_WIDTH, height: CARD_HEIGHT }}
+      whileHover={{ scale: 1.06, zIndex: 10 }}
+    >
+      <div className="relative w-full h-full rounded-xl overflow-hidden shadow-xl">
 
-      <motion.div
-        className="flex gap-6 px-6"
-        style={{ x }}
-        onHoverStart={pause}
-        onHoverEnd={play}
-      >
-        {loopImages.map((src, i) => (
-          <motion.div
-            key={i}
-            className="shrink-0"
-            style={{ width: CARD_WIDTH, height: CARD_HEIGHT }}
-            whileHover={{ scale: 1.06, zIndex: 10 }}
-          >
-            <div className="relative w-full h-full rounded-xl overflow-hidden shadow-xl">
-              <Image
-                src={src}
-                alt=""
-                fill
-                className="object-cover"
-                quality={85}
-              />
-            </div>
-          </motion.div>
-        ))}
-      </motion.div>
+        {/* 🔹 IMAGE-COLORED BLUR BACKGROUND */}
+        <Image
+          src={src}
+          alt=""
+          fill
+          priority={false}
+          quality={50}
+          className="object-cover scale-125 blur-3xl"
+        />
+
+        {/* 🔹 VERY LIGHT overlay (keeps color, removes harshness) */}
+        <div className="absolute inset-0 bg-black/10" />
+
+        {/* 🔹 FOREGROUND IMAGE (object-contain) */}
+        <Image
+          src={src}
+          alt=""
+          fill
+          quality={85}
+          className="object-contain relative z-10"
+        />
+      </div>
+    </motion.div>
+  ))}
+</motion.div>
+
 
       <button
         onClick={() => manualScroll("right")}
