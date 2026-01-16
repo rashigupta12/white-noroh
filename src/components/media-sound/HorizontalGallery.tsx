@@ -89,7 +89,7 @@ export default function HorizontalGallery({ images }: Props) {
           alt=""
           fill
           quality={85}
-          className="object-contain relative z-10"
+          className="object-cover relative z-10"
         />
       </div>
     </motion.div>
