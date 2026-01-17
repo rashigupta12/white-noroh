@@ -79,7 +79,7 @@ export default function HorizontalGallery({
                 alt={`Gallery image ${i + 1}`}
                 fill
                 sizes={`(max-width: 768px) 100vw, ${cardWidth}px`}
-                quality={95}
+                // quality={95}
                 className="object-cover"
                 priority={i < 3} // Only prioritize first few images for performance
               />
