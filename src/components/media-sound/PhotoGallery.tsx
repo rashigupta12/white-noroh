@@ -9,61 +9,67 @@ const photos = [
   "/media/4.png",
   "/media/5.png",
   "/media/6.png",
-  "/media/7.jpg",
-  "/media/8.jpg",
-  "/media/9.jpg",
-  "/media/10.jpg",
-  "/media/11.jpg",
-  "/media/12.jpg",
-  "/media/13.jpg",
-  "/media/14.jpg",
-  "/media/15.jpg",
-  "/media/16.jpg",
-  "/media/17.jpg",
-  "/media/18.jpg",
-  "/media/19.jpg",
-  "/media/20.jpg",
-  "/media/21.jpg",
-  "/media/22.jpg",
-  "/media/23.jpg",
-  "/media/24.jpg",
-  "/media/25.jpg",
-  "/media/26.jpg",
-  "/media/27.jpg",
-  "/media/28.jpg",
-  "/media/29.jpg",
-  "/media/30.jpg",
-  "/media/31.jpg",
-  "/media/32.jpg",
-  "/media/33.jpg",
+  "/media/7.png",
+  "/media/8.png",
+  "/media/9.png",
+  "/media/10.png",
+  "/media/11.png",
+  "/media/12.png",
+  "/media/13.png",
+  "/media/14.png",
+  "/media/15.png",
+  "/media/16.png",
+  "/media/17.png",
+  "/media/18.png",
+  "/media/19.png",
+  "/media/20.png",
+  "/media/21.png",
+  "/media/22.png",
+  "/media/23.png",
+  "/media/24.png",
+  "/media/25.png",
+  "/media/26.png",
+  "/media/27.png",
+  "/media/28.png",
+  "/media/29.png",
+  "/media/30.png",
+  "/media/31.png",
+  "/media/32.png",
+  "/media/33.png",
+  "/media/34.png",
+  "/media/35.png",
+  "/media/36.png",
 ];
 
 const events = [
-  "/media/events/1.jpg",
-  "/media/events/2.jpg",
-  "/media/events/3.jpg",
-  "/media/events/4.jpg",
-  "/media/events/5.jpg",
-  "/media/events/6.jpg",
-  "/media/events/7.jpg",
-  "/media/events/8.jpg",
-  "/media/events/9.jpg",
-  "/media/events/10.jpg",
-  "/media/events/11.jpg",
-  "/media/events/12.jpg",
-  "/media/events/13.jpg",
-  "/media/events/14.jpg",
-  "/media/events/15.jpg",
-  "/media/events/16.jpg",
-  "/media/events/17.jpg",
-  "/media/events/18.jpg",
-  "/media/events/19.jpg",
-  "/media/events/20.jpg",
-  "/media/events/21.jpg",
+  "/media/events/1.png",
+  "/media/events/2.png",
+  "/media/events/3.png",
+  "/media/events/4.png",
+  "/media/events/5.png",
+  "/media/events/6.png",
+  "/media/events/7.png",
+  "/media/events/8.png",
+  "/media/events/9.png",
+  "/media/events/10.png",
+  "/media/events/11.png",
+  "/media/events/12.png",
+  "/media/events/13.png",
+  "/media/events/14.png",
+  "/media/events/15.png",
+  "/media/events/16.png",
+  "/media/events/17.png",
+  "/media/events/18.png",
+  "/media/events/19.png",
+  "/media/events/20.png",
+  "/media/events/21.png",
+  "/media/events/22.png",
+  "/media/events/23.png",
+  "/media/events/24.png",
+  "/media/events/25.png",
 ];
 
 export default function PhotoGalleryScroll() {
-  
   return (
     <section className="w-full py-24 space-y-28 overflow-hidden">
       {/* Photography */}
@@ -73,15 +79,12 @@ export default function PhotoGalleryScroll() {
             Photography
           </h1>
           <p className="mt-6 text-sm tracking-[0.3em] uppercase text-text-muted-light">
-            Fashion <span className="mx-2">•</span> Food <span className="mx-2">•</span> Product
+            Fashion <span className="mx-2">•</span> Food{" "}
+            <span className="mx-2">•</span> Product
           </p>
         </div>
 
-        <HorizontalGallery 
-          images={photos} 
-          cardWidth={320}
-          cardHeight={420}
-        />
+        <HorizontalGallery images={photos} cardWidth={320} cardHeight={420} />
       </div>
 
       {/* Events */}
@@ -91,15 +94,13 @@ export default function PhotoGalleryScroll() {
             Events & Commercial
           </h2>
           <p className="mt-6 text-sm tracking-[0.3em] uppercase text-text-muted-light">
-            Events <span className="mx-2">•</span> Industrial <span className="mx-2">•</span> Shows <span className="mx-2">•</span> Sports
+            Events <span className="mx-2">•</span> Industrial{" "}
+            <span className="mx-2">•</span> Shows{" "}
+            <span className="mx-2">•</span> Sports
           </p>
         </div>
 
-        <HorizontalGallery 
-          images={events} 
-          cardWidth={420}
-          cardHeight={320}
-        />
+        <HorizontalGallery images={events} cardWidth={420} cardHeight={320} />
       </div>
     </section>
   );

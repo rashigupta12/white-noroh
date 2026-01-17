@@ -319,7 +319,7 @@
       "description": "High-quality printing services for all your branding collateral. We bring your digital designs into the physical world with precision.",
       "fullDescription": "In an increasingly digital world, high-quality print materials still make a powerful impact. Our printing solutions team ensures that every piece of collateral we produce meets the highest standards of quality and reflects your brand's values and aesthetic.",
       "icon": "Printer",
-      "heroImage": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTYsgSkUHRHR8XQIFGbpA5bx1CUwwDhY_ytEw&s",
+      "heroImage": "/printing-solutions/Printing Solutions banner.jpg",
       "services": [
         "Brochures & Flyers",
         "Business Cards",
