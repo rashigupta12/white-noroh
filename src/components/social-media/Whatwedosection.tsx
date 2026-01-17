@@ -15,7 +15,7 @@ const WhatWeDoSection = () => {
       image: "/social-media/Social Media Marketing.png",
       description:
         "Understanding the brand and ensuring its dignity at all levels",
-      points: ["social Media", "Marketing"],
+      points: ["Social Media", "Marketing"],
     },
     {
       title: "Transparency",

@@ -42,7 +42,7 @@ export default function ServiceDetailPage() {
   ];
   const titles = [
   "Catalogues Collaterals",
-  "Product Packaging and Label",
+  "Calenders",
   "Standees / Exhibition Materials",
   "Product Packaging and Label",
   "Eco Friendly Table Tops",
