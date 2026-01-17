@@ -323,7 +323,7 @@ export default function ExpertiseSection() {
               <div className="h-48 overflow-hidden relative bg-gray-100 dark:bg-zinc-800 flex items-center justify-center">
                 <Link
                   href={getServiceSlug(
-                    "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTYsgSkUHRHR8XQIFGbpA5bx1CUwwDhY_ytEw&s",
+                    "/printing-solutions/homeprintingsolutionimage.png",
                     "Printing Solutions"
                   )}
                   className="block w-full h-full relative"
@@ -331,7 +331,7 @@ export default function ExpertiseSection() {
                   <Image
                     alt="Smartphone displaying social media apps"
                     className="card-img w-full h-full object-cover transition-transform duration-700 ease-out grayscale group-hover:grayscale-0 hover:scale-105"
-                    src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTYsgSkUHRHR8XQIFGbpA5bx1CUwwDhY_ytEw&s"
+                    src="/printing-solutions/homeprintingsolutionimage.png"
                     fill
                     sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
                     style={{ objectFit: "cover" }}

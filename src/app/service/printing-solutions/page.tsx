@@ -106,7 +106,7 @@ const getTitleByIndex = (index: number) => titles[index] || "";
             src={src}
             alt={`Printing solution ${index + 1}`}
             fill
-            className="object-contain p-6 transition-transform duration-700 group-hover:scale-105"
+            className="object-contain  transition-transform duration-700 group-hover:scale-105"
           />
         </div>
 
