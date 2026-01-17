@@ -159,63 +159,74 @@ export default function ExpertiseSection() {
           </div>
 
           {/* Media & Sound Card - Full Width */}
-          <div className="w-full mb-10 bg-surface-light dark:bg-surface-dark rounded-2xl border border-gray-100 dark:border-zinc-800 overflow-hidden hover:shadow-xl transition-all duration-500">
-            {/* Image Section */}
-            <div className="relative w-full h-55 md:h-65 overflow-hidden">
-              <Link
-                href={getServiceSlug(
-                  "https://lh3.googleusercontent.com/aida-public/AB6AXuDdrkHmQTrt3EQh8WSSq4zcO_UL0sdX262czsY_pZ5OSocfQ8K8XkLlTIFpef5d9BwnDV9z2ewcFcqdo4x9i3Ba0nPnEKi6WJWLV1GLyU4sd3VTdv-GhOJprG6xSUeV5pDT2orDYrEyVZoAfldZ8dPVZGCWFFwZROV50wyZxkMndf4QQ55UjRtC6qTdAaAGJ-IprdZDC7en6NMEnuYDAxRuOvwb1n9Nb5s1hgbtgJ9uvUId0CYmkO9BSOtZRPr48GWgF-g2fsdI8zg",
-                  "Media & Sound"
-                )}
-                className="block w-full h-full relative"
-              >
-                <Image
-                  src="https://lh3.googleusercontent.com/aida-public/AB6AXuDdrkHmQTrt3EQh8WSSq4zcO_UL0sdX262czsY_pZ5OSocfQ8K8XkLlTIFpef5d9BwnDV9z2ewcFcqdo4x9i3Ba0nPnEKi6WJWLV1GLyU4sd3VTdv-GhOJprG6xSUeV5pDT2orDYrEyVZoAfldZ8dPVZGCWFFwZROV50wyZxkMndf4QQ55UjRtC6qTdAaAGJ-IprdZDC7en6NMEnuYDAxRuOvwb1n9Nb5s1hgbtgJ9uvUId0CYmkO9BSOtZRPr48GWgF-g2fsdI8zg"
-                  alt="Media and sound equipment"
-                  className="w-full h-full object-cover grayscale hover:grayscale-0 hover:scale-105 transition-all duration-700"
-                  fill
-                  sizes="100vw"
-                  style={{ objectFit: "cover" }}
-                />
-                <div className="absolute inset-0 bg-black/0 hover:bg-black/10 transition-colors duration-300"></div>
-              </Link>
-            </div>
+         {/* Media & Sound Card - Full Width */}
+<div className="group w-full mb-10 bg-surface-light dark:bg-surface-dark rounded-2xl border border-gray-100 dark:border-zinc-800 overflow-hidden hover:shadow-2xl hover:shadow-primary/5 transition-all duration-500 fade-in-up delay-200">
+  {/* Image Section */}
+  <div className="relative w-full h-55 md:h-65 overflow-hidden">
+    <Link
+      href={getServiceSlug(
+        "/Media and Sound banner.png",
+        "Media & Sound"
+      )}
+      className="block w-full h-full relative"
+    >
+      {/* Add the overlay effect */}
+      <div className="absolute inset-0 bg-primary/10 z-10 mix-blend-multiply transition-opacity group-hover:opacity-0"></div>
+      
+      <Image
+        src="/Media and Sound banner.png"
+        alt="Media and sound equipment"
+        className="w-full h-full object-cover transition-transform duration-700 ease-out grayscale group-hover:grayscale-0 group-hover:scale-105"
+        fill
+        sizes="100vw"
+        style={{ objectFit: "cover" }}
+      />
+      
+      {/* Add the icon on top left */}
+      <div className="absolute top-6 left-6 z-20 bg-white dark:bg-surface-dark/90 backdrop-blur-sm p-3 rounded-xl border border-gray-100 dark:border-zinc-700 shadow-sm">
+        <Video className="text-text-main-light w-6 h-6" />
+      </div>
+      
+      {/* Add the dark overlay on hover */}
+      <div className="absolute inset-0 bg-black/0 group-hover:bg-black/10 transition-colors duration-300"></div>
+    </Link>
+  </div>
 
-            {/* Content Section */}
-            <div className="px-8 py-10 md:px-10">
-              <span className="text-xs font-extrabold tracking-[0.2em] uppercase text-text-muted-light block mb-3">
-                Media & Visual
-              </span>
+  {/* Content Section */}
+  <div className="px-8 py-10 md:px-10">
+    <span className="text-xs font-extrabold tracking-[0.2em] uppercase text-text-muted-light block mb-3">
+      Media & Visual
+    </span>
 
-              <h3 className="font-display text-2xl md:text-2xl font-semibold text-text-main-light dark:text-white mb-4">
-                Media & Sound
-              </h3>
+    <h3 className="font-display text-2xl md:text-2xl font-semibold text-text-main-light dark:text-white mb-4">
+      Media & Sound
+    </h3>
 
-              <p className="text-text-muted-light dark:text-text-muted-dark text-sm md:text-base leading-relaxed max-w-3xl mb-8">
-                Captivate your audience through immersive media. From crisp
-                photography to professional sound engineering, we ensure your
-                message is seen and heard clearly with cinematic quality.
-              </p>
+    <p className="text-text-muted-light dark:text-text-muted-dark text-sm md:text-base leading-relaxed max-w-3xl mb-8">
+      Captivate your audience through immersive media. From crisp
+      photography to professional sound engineering, we ensure your
+      message is seen and heard clearly with cinematic quality.
+    </p>
 
-              {/* Services */}
-              <div className="flex flex-wrap gap-x-10 gap-y-4 text-sm text-text-main-light dark:text-gray-300">
-                <div className="flex items-center gap-2">
-                  <Video className="text-text-muted-light w-5 h-5" />
-                  Video Production
-                </div>
+    {/* Services */}
+    <div className="flex flex-wrap gap-x-10 gap-y-4 text-sm text-text-main-light dark:text-gray-300">
+      <div className="flex items-center gap-2">
+        <Video className="text-text-muted-light w-5 h-5" />
+        Video Production
+      </div>
 
-                <div className="flex items-center gap-2">
-                  <Volume2 className="text-text-muted-light w-5 h-5" />
-                  Sound Design
-                </div>
+      <div className="flex items-center gap-2">
+        <Volume2 className="text-text-muted-light w-5 h-5" />
+        Sound Design
+      </div>
 
-                <div className="flex items-center gap-2">
-                  <Camera className="text-text-muted-light w-5 h-5" />
-                  Product Photography
-                </div>
-              </div>
-            </div>
-          </div>
+      <div className="flex items-center gap-2">
+        <Camera className="text-text-muted-light w-5 h-5" />
+        Product Photography
+      </div>
+    </div>
+  </div>
+</div>
 
           {/* Bottom Row - 3 Cards */}
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
