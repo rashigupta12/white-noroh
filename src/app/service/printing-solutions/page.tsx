@@ -56,7 +56,7 @@ const getTitleByIndex = (index: number) => titles[index] || "";
       {/* ================= Hero Section ================= */}
       <div className="relative h-[50vh] overflow-hidden bg-gray-50">
         <Image
-          src="/printing-solutions/Printing Solutions banner.jpg"
+          src="/printing-solutions/Banner.png"
           alt="Printing Solutions"
           fill
           priority
