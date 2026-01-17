@@ -3,12 +3,12 @@
 import HorizontalGallery from "./HorizontalGallery";
 
 const photos = [
-  "/media/1.jpg",
-  "/media/2.jpg",
-  "/media/3.jpg",
-  "/media/4.jpg",
-  "/media/5.jpg",
-  "/media/6.jpg",
+  "/media/1.png",
+  "/media/2.png",
+  "/media/3.png",
+  "/media/4.png",
+  "/media/5.png",
+  "/media/6.png",
   "/media/7.jpg",
   "/media/8.jpg",
   "/media/9.jpg",
