@@ -26,7 +26,7 @@ export default function ExpertiseSection() {
     const service = services.find(
       (s) =>
         s.heroImage === imageUrl ||
-        s.title.toLowerCase().includes(title.toLowerCase())
+        s.title.toLowerCase().includes(title.toLowerCase()),
     );
     return service ? `/service/${service.id}` : "/services";
   };
@@ -54,7 +54,7 @@ export default function ExpertiseSection() {
                 <Link
                   href={getServiceSlug(
                     "https://lh3.googleusercontent.com/aida-public/AB6AXuDoPXfvQeboRXEs_DKX_L5_OOrJ39OXg-3XJGjYL8NolgtmGCuTHuhI9xsdwc4OWQG3IMvM0AlBtp2AIb0bHSxfK1h518TTDyMcEFCbAG43JWIIXfaZlqSnrcW6BDRjsffZlcDaMoXx692ZV8-hQ2tVk0D23zrnPesJLl8kz0MpMtMLMLJD6DglnbP9QnfAnOxxN06z_DL-PSIZV2FHyctdbIeBpyklAugAlwGpkC6-EmSli3bPSNhHy-cR-CCjljEj3IiRTJm4lU4",
-                    "Brand & Creative"
+                    "Brand & Creative",
                   )}
                   className="block w-full h-full relative"
                 >
@@ -62,7 +62,7 @@ export default function ExpertiseSection() {
                   <Image
                     alt="Various branding materials laid out on a table"
                     className="card-img w-full h-full object-cover transition-transform duration-700 ease-out grayscale group-hover:grayscale-0 hover:scale-105"
-                    src="https://lh3.googleusercontent.com/aida-public/AB6AXuDoPXfvQeboRXEs_DKX_L5_OOrJ39OXg-3XJGjYL8NolgtmGCuTHuhI9xsdwc4OWQG3IMvM0AlBtp2AIb0bHSxfK1h518TTDyMcEFCbAG43JWIIXfaZlqSnrcW6BDRjsffZlcDaMoXx692ZV8-hQ2tVk0D23zrnPesJLl8kz0MpMtMLMLJD6DglnbP9QnfAnOxxN06z_DL-PSIZV2FHyctdbIeBpyklAugAlwGpkC6-EmSli3bPSNhHy-cR-CCjljEj3IiRTJm4lU4"
+                    src="/Banner.png"
                     fill
                     sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
                     style={{ objectFit: "cover" }}
@@ -159,74 +159,74 @@ export default function ExpertiseSection() {
           </div>
 
           {/* Media & Sound Card - Full Width */}
-         {/* Media & Sound Card - Full Width */}
-<div className="group w-full mb-10 bg-surface-light dark:bg-surface-dark rounded-2xl border border-gray-100 dark:border-zinc-800 overflow-hidden hover:shadow-2xl hover:shadow-primary/5 transition-all duration-500 fade-in-up delay-200">
-  {/* Image Section */}
-  <div className="relative w-full h-55 md:h-65 overflow-hidden">
-    <Link
-      href={getServiceSlug(
-        "/Media and Sound banner.png",
-        "Media & Sound"
-      )}
-      className="block w-full h-full relative"
-    >
-      {/* Add the overlay effect */}
-      <div className="absolute inset-0 bg-primary/10 z-10 mix-blend-multiply transition-opacity group-hover:opacity-0"></div>
-      
-      <Image
-        src="/Media and Sound banner.png"
-        alt="Media and sound equipment"
-        className="w-full h-full object-cover transition-transform duration-700 ease-out grayscale group-hover:grayscale-0 group-hover:scale-105"
-        fill
-        sizes="100vw"
-        style={{ objectFit: "cover" }}
-      />
-      
-      {/* Add the icon on top left */}
-      <div className="absolute top-6 left-6 z-20 bg-white dark:bg-surface-dark/90 backdrop-blur-sm p-3 rounded-xl border border-gray-100 dark:border-zinc-700 shadow-sm">
-        <Video className="text-text-main-light w-6 h-6" />
-      </div>
-      
-      {/* Add the dark overlay on hover */}
-      <div className="absolute inset-0 bg-black/0 group-hover:bg-black/10 transition-colors duration-300"></div>
-    </Link>
-  </div>
+          {/* Media & Sound Card - Full Width */}
+          <div className="group w-full mb-10 bg-surface-light dark:bg-surface-dark rounded-2xl border border-gray-100 dark:border-zinc-800 overflow-hidden hover:shadow-2xl hover:shadow-primary/5 transition-all duration-500 fade-in-up delay-200">
+            {/* Image Section */}
+            <div className="relative w-full h-55 md:h-65 overflow-hidden">
+              <Link
+                href={getServiceSlug(
+                  "/Media and Sound banner.png",
+                  "Media & Sound",
+                )}
+                className="block w-full h-full relative"
+              >
+                {/* Add the overlay effect */}
+                <div className="absolute inset-0 bg-primary/10 z-10 mix-blend-multiply transition-opacity group-hover:opacity-0"></div>
 
-  {/* Content Section */}
-  <div className="px-8 py-10 md:px-10">
-    <span className="text-xs font-extrabold tracking-[0.2em] uppercase text-text-muted-light block mb-3">
-      Media & Visual
-    </span>
+                <Image
+                  src="/Media and Sound banner.png"
+                  alt="Media and sound equipment"
+                  className="w-full h-full object-cover transition-transform duration-700 ease-out grayscale group-hover:grayscale-0 group-hover:scale-105"
+                  fill
+                  sizes="100vw"
+                  style={{ objectFit: "cover" }}
+                />
 
-    <h3 className="font-display text-2xl md:text-2xl font-semibold text-text-main-light dark:text-white mb-4">
-      Media & Sound
-    </h3>
+                {/* Add the icon on top left */}
+                <div className="absolute top-6 left-6 z-20 bg-white dark:bg-surface-dark/90 backdrop-blur-sm p-3 rounded-xl border border-gray-100 dark:border-zinc-700 shadow-sm">
+                  <Video className="text-text-main-light w-6 h-6" />
+                </div>
 
-    <p className="text-text-muted-light dark:text-text-muted-dark text-sm md:text-base leading-relaxed max-w-3xl mb-8">
-      Captivate your audience through immersive media. From crisp
-      photography to professional sound engineering, we ensure your
-      message is seen and heard clearly with cinematic quality.
-    </p>
+                {/* Add the dark overlay on hover */}
+                <div className="absolute inset-0 bg-black/0 group-hover:bg-black/10 transition-colors duration-300"></div>
+              </Link>
+            </div>
 
-    {/* Services */}
-    <div className="flex flex-wrap gap-x-10 gap-y-4 text-sm text-text-main-light dark:text-gray-300">
-      <div className="flex items-center gap-2">
-        <Video className="text-text-muted-light w-5 h-5" />
-        Video Production
-      </div>
+            {/* Content Section */}
+            <div className="px-8 py-10 md:px-10">
+              <span className="text-xs font-extrabold tracking-[0.2em] uppercase text-text-muted-light block mb-3">
+                Media & Visual
+              </span>
 
-      <div className="flex items-center gap-2">
-        <Volume2 className="text-text-muted-light w-5 h-5" />
-        Sound Design
-      </div>
+              <h3 className="font-display text-2xl md:text-2xl font-semibold text-text-main-light dark:text-white mb-4">
+                Media & Sound
+              </h3>
 
-      <div className="flex items-center gap-2">
-        <Camera className="text-text-muted-light w-5 h-5" />
-        Product Photography
-      </div>
-    </div>
-  </div>
-</div>
+              <p className="text-text-muted-light dark:text-text-muted-dark text-sm md:text-base leading-relaxed max-w-3xl mb-8">
+                Captivate your audience through immersive media. From crisp
+                photography to professional sound engineering, we ensure your
+                message is seen and heard clearly with cinematic quality.
+              </p>
+
+              {/* Services */}
+              <div className="flex flex-wrap gap-x-10 gap-y-4 text-sm text-text-main-light dark:text-gray-300">
+                <div className="flex items-center gap-2">
+                  <Video className="text-text-muted-light w-5 h-5" />
+                  Video Production
+                </div>
+
+                <div className="flex items-center gap-2">
+                  <Volume2 className="text-text-muted-light w-5 h-5" />
+                  Sound Design
+                </div>
+
+                <div className="flex items-center gap-2">
+                  <Camera className="text-text-muted-light w-5 h-5" />
+                  Product Photography
+                </div>
+              </div>
+            </div>
+          </div>
 
           {/* Bottom Row - 3 Cards */}
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
@@ -236,7 +236,7 @@ export default function ExpertiseSection() {
                 <Link
                   href={getServiceSlug(
                     "/Exhibition/Exhibition Approach.png",
-                    "Exhibition Design"
+                    "Exhibition Design",
                   )}
                   className="block w-full h-full relative"
                 >
@@ -292,7 +292,7 @@ export default function ExpertiseSection() {
                   <Image
                     alt="Smartphone displaying social media apps"
                     className="card-img w-full h-full object-cover transition-transform duration-700 ease-out grayscale group-hover:grayscale-0 hover:scale-105"
-                    src="/social media.jpg"
+                    src="/Social Media banner for homepage.png"
                     fill
                     sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
                     style={{ objectFit: "cover" }}
@@ -335,7 +335,7 @@ export default function ExpertiseSection() {
                 <Link
                   href={getServiceSlug(
                     "/printing-solutions/homeprintingsolutionimage.png",
-                    "Printing Solutions"
+                    "Printing Solutions",
                   )}
                   className="block w-full h-full relative"
                 >
