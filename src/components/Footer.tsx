@@ -106,7 +106,7 @@ export default function Footer() {
                 {[
                   { id: 'home', label: 'Home'  , link:'/#home'},
                   { id: 'about', label: 'About', link:'/#about' },
-                  // { id: 'work', label: 'Work' },
+                
                   { id: 'contact', label: 'Contact', link :"/contact" }
                 ].map((item) => (
                   <Link
