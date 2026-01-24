@@ -23,12 +23,12 @@ const BrandCreative = () => {
   }, []);
 
   return (
-    <div className="min-h-screen bg-background-light dark:bg-background-dark text-text-light dark:text-text-dark transition-colors duration-300">
+    <div className="min-h-screen bg-background-light dark:bg-background-dark text-text-light dark:text-text-dark transition-colors duration-300 pt-16">
       <main>
         {/* ================= HERO BANNER ================= */}
         {isMobile ? (
           // Mobile Layout - Image on top, text below
-           <div className="bg-white pt-20">
+           <div className="bg-white pt-8">
             <div className="relative w-full h-[50vh] overflow-hidden">
               <Image
                 src="/printing-solutions/Printing mobile banner.png"
@@ -60,7 +60,7 @@ const BrandCreative = () => {
           </div>
         ) : (
           // Desktop Layout - Text overlaid on image
-     <div className="relative h-[60vh] overflow-hidden bg-gray-50">
+     <div className="relative h-[60vh] overflow-hidden bg-gray-50 ">
             <Image
               src="/printing-solutions/Banner.png"
               alt="Printing Solutions"

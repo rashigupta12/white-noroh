@@ -39,7 +39,7 @@ const WhatWeDoSection = () => {
         {/* Section Header */}
         <div className="text-center ">
           <h2 className="font-futura-md text-4xl md:text-5xl text-text-main-light mb-6 font-medium tracking-tight">
-            what we do
+            What we do
           </h2>
         </div>
 

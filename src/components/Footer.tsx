@@ -39,7 +39,7 @@ export default function Footer() {
       <div className="max-w-7xl mx-auto px-6 lg:px-8">
 
         {/* ================= MAIN FOOTER ================= */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 py-16 text-left">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-12 py-16 text-left">
 
           {/* ===== BRAND COLUMN ===== */}
           <div className="lg:col-span-2 space-y-6 max-w-md">
@@ -53,7 +53,7 @@ export default function Footer() {
               experiences through thoughtful design.
             </p>
 
-            <div className="space-y-4 flex flex-col items-start">
+            <div className="space-y-4">
               <div className="flex items-center gap-3 text-sm text-text-muted-light dark:text-text-muted-dark">
                 <MapPin className="w-4 h-4" />
                 <span>India</span>
@@ -82,7 +82,7 @@ export default function Footer() {
           </div>
 
           {/* ===== EXPLORE COLUMN ===== */}
-          <div className="space-y-6">
+          <div className="lg:col-start-4 space-y-6">
             <h4 className="text-sm font-bold uppercase tracking-widest text-text-main-light dark:text-white">
               Explore
             </h4>
@@ -101,7 +101,7 @@ export default function Footer() {
           </div>
 
           {/* ===== SERVICES COLUMN ===== */}
-          <div className="space-y-6">
+          <div className="lg:col-start-5 space-y-6">
             <h4 className="text-sm font-bold uppercase tracking-widest text-text-main-light dark:text-white">
               Services
             </h4>
@@ -129,17 +129,18 @@ export default function Footer() {
 
         </div>
 
-      <div className="border-t border-gray-200 dark:border-gray-800 py-8">
-  <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-2">
-    <p className="text-xs text-text-muted-light">
-      © 2025 White Noroh Studio. All rights reserved.
-    </p>
+        {/* ================= BOTTOM BAR ================= */}
+        <div className="border-t border-gray-200 dark:border-gray-800 py-8">
+          <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-2">
+            <p className="text-xs text-text-muted-light">
+              © 2025 White Noroh Studio. All rights reserved.
+            </p>
 
-    <span className="text-xs text-text-muted-light">
-      Crafted with passion
-    </span>
-  </div>
-</div>
+            <span className="text-xs text-text-muted-light">
+              Crafted with passion
+            </span>
+          </div>
+        </div>
 
       </div>
     </footer>
