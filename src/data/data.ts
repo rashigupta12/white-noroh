@@ -85,11 +85,11 @@
         "specialization": ["IT Governance", "Risk Management", "Compliance", "Audit"]
       },
       {
-        "name": "Shweta Sharma",
+        "name": "Shweta",
         "designation": "Creative Head",
         "image": "/team/shweta-sharma.jpg",
         "bio": "20+ years of experience bridging creativity with technology for exceptional user experiences",
-        "specialization": ["UI/UX Design", "Creative Direction", "Brand Integration"]
+        "specialization": ["UI/UX Design", "Art Direction", "Branding"]
       },
       {
         "name": "Pankaj Gupta",
@@ -313,7 +313,7 @@
     },
     {
       "id": "printing-solutions",
-      "title": "Printing Solutions",
+      "title": "Printing ",
       "slug": "printing-solutions",
       "category": "Tangible",
       "description": "High-quality printing services for all your branding collateral. We bring your digital designs into the physical world with precision.",

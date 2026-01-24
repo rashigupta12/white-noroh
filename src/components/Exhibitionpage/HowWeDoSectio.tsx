@@ -34,11 +34,11 @@ const HowWeDoSection = () => {
   ];
 
   return (
-    <section className="px-4 sm:px-6 lg:px-8 bg-linear-to-b from-gray-50 to-white dark:from-gray-900 dark:to-gray-800">
+    <section className="py-5 px-4 sm:px-6 lg:px-8 bg-linear-to-b from-gray-50 to-white dark:from-gray-900 dark:to-gray-800">
       <div className="max-w-7xl mx-auto">
         {/* Section Header */}
         <div className="text-center ">
-          <h2 className="font-futura-md text-4xl md:text-5xl text-text-main-light mb-6 font-medium tracking-tight">
+          <h2 className="font-futura-md text-3xl md:text-4xl text-text-main-light mb-6 font-medium tracking-tight">
             How we do
           </h2>
         </div>

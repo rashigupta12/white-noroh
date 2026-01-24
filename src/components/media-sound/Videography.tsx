@@ -14,7 +14,7 @@ export default function VideographySection() {
     <section className="w-full">
       <div className="max-w-7xl mx-auto px-4">
         <div className="text-center mb-14">
-          <h2 className="font-futura-md text-4xl md:text-5xl text-text-main-light">
+          <h2 className="font-futura-md text-3xl md:text-4xl text-text-main-light">
             Videography & Films
           </h2>
         </div>

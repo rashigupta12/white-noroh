@@ -1,6 +1,5 @@
 "use client";
 
-import Image from "next/image";
 import React, { useState } from "react";
 
 const ContactPage = () => {
@@ -17,15 +16,11 @@ const ContactPage = () => {
     e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
   ) => {
     const { id, value } = e.target;
-    setFormData((prev) => ({
-      ...prev,
-      [id]: value,
-    }));
+    setFormData((prev) => ({ ...prev, [id]: value }));
   };
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    console.log("Form submitted:", formData);
     alert("Message sent successfully!");
     setFormData({
       name: "",
@@ -38,170 +33,130 @@ const ContactPage = () => {
   };
 
   return (
-    <div className="min-h-screen bg-background-light dark:bg-background-dark text-text-light dark:text-text-dark mt-20 mb-24">
+    <div className="min-h-screen bg-background-light dark:bg-background-dark text-text-light dark:text-text-dark">
       <main>
-        {/* ================= HERO SECTION ================= */}
-        <div className="relative h-[60vh] overflow-hidden">
-          <Image
-            src="/contact/Contact us banner.png"
-            alt="Contact us"
-            fill
-            priority
-            className="object-cover"
-          />
 
-          {/* Overlay */}
-          {/* <div className="absolute inset-0 bg-black/50" /> */}
-
-          {/* Content */}
-                 <div className="absolute inset-0 flex items-end">
-            <div className="w-full p-6 md:p-12">
-              <div className="max-w-7xl mx-auto">
-             
-
-                <h1 className="text-4xl md:text-5xl font-bold text-black mb-4">
-                  Contact Us
-                </h1>
-
-           
-              </div>
-            </div>
+        {/* ================= HERO ================= */}
+        <section className="pt-32  text-center">
+          <div className="max-w-3xl mx-auto px-6">
+            <h1 className="font-futura-md text-3xl md:text-4xl font-semibold tracking-tight mb-4 text-text-main-light">
+              Drop a Message
+            </h1>
+      
           </div>
-        </div>
+        </section>
 
-        {/* ================= MAIN CONTENT ================= */}
-        <div className="container mx-auto px-4 max-w-7xl mt-24">
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-12 items-start">
-            {/* ================= LEFT INFO ================= */}
-            <div className="md:col-span-1 bg-gray-50 dark:bg-neutral-900 rounded-2xl p-8 shadow-sm">
-              <h2 className="text-3xl font-bold mb-6">Get in Touch</h2>
+        {/* ================= CONTENT ================= */}
+        <section className="">
+          <div className="max-w-7xl mx-auto p-6">
+            <div className="grid grid-cols-1 lg:grid-cols-3 gap-12 items-start">
 
-              <div className="space-y-4 text-gray-600 dark:text-gray-300 text-lg">
-                <p>📍 India</p>
+              {/* ===== LEFT INFO ===== */}
+              <div className="lg:col-span-1 bg-gray-50 dark:bg-neutral-900 rounded-2xl p-10">
+                <h2 className="text-2xl font-semibold mb-6">
+                  Get in Touch
+                </h2>
 
-                <p>
+                <div className="space-y-5 text-sm text-text-muted-light">
+                  <p>📍 India</p>
+
                   <a
                     href="mailto:whitenoroh@gmail.com"
-                    className="hover:text-black dark:hover:text-white transition"
+                    className="block hover:text-black dark:hover:text-white transition"
                   >
                     ✉️ whitenoroh@gmail.com
                   </a>
-                </p>
 
-                <p>📞 +91 9389495430</p>
+                  <p>📞 +91 9389495430</p>
 
-                {/* Social Icons */}
-                <div className="flex gap-4 pt-6">
-                  {/* Facebook */}
-                  <a
-                    href="#"
-                    aria-label="Facebook"
-                    className="w-10 h-10 flex items-center justify-center rounded-full bg-black text-white hover:bg-primary transition"
-                  >
-                    <svg
-                      className="w-5 h-5"
-                      fill="currentColor"
-                      viewBox="0 0 24 24"
-                    >
-                      <path d="M9 8h-3v4h3v12h5v-12h3.642l.358-4h-4v-1.667c0-.955.192-1.333 1.115-1.333h2.885v-5h-3.808c-3.596 0-5.192 1.583-5.192 4.615v3.385z" />
-                    </svg>
-                  </a>
-
-                  {/* Instagram */}
-                  <a
-                    href="#"
-                    aria-label="Instagram"
-                    className="w-10 h-10 flex items-center justify-center rounded-full bg-black text-white hover:bg-primary transition"
-                  >
-                    <svg
-                      className="w-5 h-5"
-                      fill="currentColor"
-                      viewBox="0 0 24 24"
-                    >
-                      <path d="M12 2.163c3.204 0 3.584.012 4.85.07..." />
-                    </svg>
-                  </a>
+                  <p className="pt-4 text-xs leading-relaxed">
+                    We usually respond within 24 hours on business days.
+                  </p>
                 </div>
               </div>
-            </div>
 
-            {/* ================= FORM ================= */}
-            <div className="md:col-span-2 bg-white dark:bg-neutral-950 rounded-2xl p-8 shadow-md">
-              <form onSubmit={handleSubmit} className="space-y-6">
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+              {/* ===== FORM ===== */}
+              <div className="lg:col-span-2 bg-white dark:bg-neutral-950 rounded-2xl p-6 shadow-sm">
+                <form onSubmit={handleSubmit} className="space-y-8">
+
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <input
+                      id="name"
+                      type="text"
+                      placeholder="Your Name"
+                      value={formData.name}
+                      onChange={handleChange}
+                      required
+                      className="w-full border-b border-gray-300 bg-transparent py-3 text-base focus:outline-none focus:border-black dark:focus:border-white"
+                    />
+
+                    <input
+                      id="email"
+                      type="email"
+                      placeholder="Email Address"
+                      value={formData.email}
+                      onChange={handleChange}
+                      required
+                      className="w-full border-b border-gray-300 bg-transparent py-3 text-base focus:outline-none focus:border-black dark:focus:border-white"
+                    />
+                  </div>
+
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <input
+                      id="phone"
+                      type="tel"
+                      placeholder="Phone (optional)"
+                      value={formData.phone}
+                      onChange={handleChange}
+                      className="w-full border-b border-gray-300 bg-transparent py-3 text-base focus:outline-none focus:border-black dark:focus:border-white"
+                    />
+
+                    <input
+                      id="address"
+                      type="text"
+                      placeholder="City / Address"
+                      value={formData.address}
+                      onChange={handleChange}
+                      className="w-full border-b border-gray-300 bg-transparent py-3 text-base focus:outline-none focus:border-black dark:focus:border-white"
+                    />
+                  </div>
+
                   <input
-                    id="name"
+                    id="subject"
                     type="text"
-                    placeholder="Name"
-                    value={formData.name}
+                    placeholder="Subject"
+                    value={formData.subject}
                     onChange={handleChange}
                     required
-                    className="w-full border-b border-gray-300 bg-transparent py-3 text-lg focus:outline-none focus:border-black dark:focus:border-white"
+                    className="w-full border-b border-gray-300 bg-transparent py-3 text-base focus:outline-none focus:border-black dark:focus:border-white"
                   />
 
-                  <input
-                    id="email"
-                    type="email"
-                    placeholder="Email"
-                    value={formData.email}
+                  <textarea
+                    id="message"
+                    placeholder="Tell us about your project..."
+                    rows={5}
+                    value={formData.message}
                     onChange={handleChange}
                     required
-                    className="w-full border-b border-gray-300 bg-transparent py-3 text-lg focus:outline-none focus:border-black dark:focus:border-white"
-                  />
-                </div>
-
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                  <input
-                    id="phone"
-                    type="tel"
-                    placeholder="Phone"
-                    value={formData.phone}
-                    onChange={handleChange}
-                    className="w-full border-b border-gray-300 bg-transparent py-3 text-lg focus:outline-none focus:border-black dark:focus:border-white"
+                    className="w-full border-b border-gray-300 bg-transparent py-3 text-base resize-none focus:outline-none focus:border-black dark:focus:border-white"
                   />
 
-                  <input
-                    id="address"
-                    type="text"
-                    placeholder="Address"
-                    value={formData.address}
-                    onChange={handleChange}
-                    className="w-full border-b border-gray-300 bg-transparent py-3 text-lg focus:outline-none focus:border-black dark:focus:border-white"
-                  />
-                </div>
+                  <div className="pt-6">
+                    <button
+                      type="submit"
+                      className="inline-flex items-center justify-center bg-black hover:bg-primary text-white px-14 py-3 text-sm rounded-full tracking-wide transition"
+                    >
+                      Send Message
+                    </button>
+                  </div>
 
-                <input
-                  id="subject"
-                  type="text"
-                  placeholder="Subject"
-                  value={formData.subject}
-                  onChange={handleChange}
-                  required
-                  className="w-full border-b border-gray-300 bg-transparent py-3 text-lg focus:outline-none focus:border-black dark:focus:border-white"
-                />
+                </form>
+              </div>
 
-                <textarea
-                  id="message"
-                  placeholder="Type your message..."
-                  rows={4}
-                  value={formData.message}
-                  onChange={handleChange}
-                  required
-                  className="w-full border-b border-gray-300 bg-transparent py-3 text-lg resize-none focus:outline-none focus:border-black dark:focus:border-white"
-                />
-
-                <div className="pt-6">
-                  <button
-                    type="submit"
-                    className="bg-black hover:bg-primary text-white px-16 py-3 text-lg rounded-full tracking-wide transition"
-                  >
-                    Send Message
-                  </button>
-                </div>
-              </form>
             </div>
           </div>
-        </div>
+        </section>
+
       </main>
     </div>
   );

@@ -75,7 +75,7 @@ export default function PhotoGalleryScroll() {
       {/* Photography */}
       <div>
         <div className="text-center mb-14">
-          <h1 className="font-futura-md text-4xl md:text-5xl text-text-main-light">
+          <h1 className="font-futura-md text-3xl md:text-4xl text-text-main-light">
             Photography
           </h1>
           <p className="mt-6 text-sm tracking-[0.3em] uppercase text-text-muted-light">

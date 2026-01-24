@@ -25,8 +25,8 @@ export default function MusicProductionSection() {
       <div className="max-w-7xl mx-auto px-4">
         {/* Heading */}
         <div className="text-center mb-16">
-          <h2 className="font-futura-md text-4xl md:text-5xl text-text-main-light tracking-tight">
-            Music Production
+          <h2 className="font-futura-md text-3xl md:text-4xl text-text-main-light">
+            Music and Sound Production
           </h2>
 
           <p className="mt-6 text-sm md:text-base tracking-[0.3em] uppercase text-text-muted-light">

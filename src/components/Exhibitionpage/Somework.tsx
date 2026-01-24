@@ -16,8 +16,8 @@ const SomeWorkSection = () => {
       <div className="max-w-7xl mx-auto">
         {/* Section Header */}
         <div className="text-center">
-          <h2 className="font-futura-md text-4xl md:text-5xl text-text-main-light mb-6 font-medium tracking-tight">
-            Some Work
+          <h2 className="font-futura-md text-3xl md:text-4xl text-text-main-light mb-6 font-medium tracking-tight">
+            Our Work
           </h2>
         </div>
 

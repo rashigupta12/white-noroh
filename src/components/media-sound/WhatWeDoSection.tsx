@@ -50,7 +50,7 @@ const WhatWeDoSection = () => {
       <div className="max-w-7xl mx-auto">
         {/* Section Header */}
         <div className="text-center">
-          <h2 className="font-futura-md text-4xl md:text-5xl text-text-main-light mb-6 font-medium tracking-tight">
+          <h2 className="font-futura-md text-3xl md:text-4xl text-text-main-light">
             What we do
           </h2>
         </div>

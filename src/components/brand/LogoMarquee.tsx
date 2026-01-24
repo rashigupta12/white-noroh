@@ -17,6 +17,7 @@ const logos = [
   "/logos/12.png",
   "/logos/13.png",
   "/logos/14.png",
+  "/logos/15.jpg"
 
 ];
 
@@ -24,7 +25,7 @@ export default function LogoMarquee() {
   return (
     <section className="  relative overflow-hidden bg-white pt-10 ">
        <div className="text-center">
-          <h2 className="font-futura-md text-4xl md:text-4xl text-text-main-light mb-6  tracking-tight">
+          <h2 className="font-futura-md text-3xl md:text-4xl text-text-main-light mb-6  tracking-tight">
             Logo Design
           </h2>
         </div>

@@ -192,7 +192,7 @@ export default function ExpertiseSection() {
             <div className="relative w-full h-80 md:h-50 lg:h-75 overflow-hidden">
               <Link
                 href={getServiceSlug(
-                  "/Media and Sound banner.png",
+                  "/Media and Sound banner (1).png",
                   "Media & Sound",
                 )}
                 className="block w-full h-full relative"
@@ -208,7 +208,7 @@ export default function ExpertiseSection() {
                   <Image
                     src="/Media & Sound.png" // Add your mobile-optimized image
                     alt="Media and sound equipment"
-                    className="w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-105"
+                    className="w-full h-full object-cover transition-transform duration-700 ease-out "
                     fill
                     sizes="100vw"
                     style={{ objectFit: "cover", objectPosition: "center" }}
@@ -216,7 +216,7 @@ export default function ExpertiseSection() {
                 ) : (
                   // Desktop/Tab image - with grayscale effect and better positioning
                   <Image
-                    src="/Media and Sound banner.png" // Keep original desktop image
+                    src="/Media and Sound banner (1).png" // Keep original desktop image
                     alt="Media and sound equipment"
                     className="w-full h-full object-cover transition-transform duration-700 ease-out grayscale group-hover:grayscale-0 group-hover:scale-105"
                     fill
@@ -388,7 +388,7 @@ export default function ExpertiseSection() {
                 <Link
                   href={getServiceSlug(
                     "/printing-solutions/homeprintingsolutionimage.png",
-                    "Printing Solutions",
+                    "Printing",
                   )}
                   className="block w-full h-full relative"
                 >
