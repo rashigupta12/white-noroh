@@ -153,14 +153,14 @@ export default function Header() {
               )}
             </div>
 
-            {/* Work */}
-            <Link 
-              href="/#work"
-              onClick={(e) => handleHomePageScroll(e, 'work')}
+              <Link 
+              href="/contact"
+        
               className="hover:text-gray-500 transition-colors"
             >
-              Work
+              Contact
             </Link>
+
 
           
           </nav>

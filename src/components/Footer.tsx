@@ -37,17 +37,6 @@ export default function Footer() {
     }
   }, [isHomePage])
 
-  const handleHomePageScroll = (e: React.MouseEvent, sectionId: string) => {
-    if (isHomePage) {
-      e.preventDefault()
-      const element = document.getElementById(sectionId)
-      if (element) {
-        element.scrollIntoView({ behavior: 'smooth' })
-      }
-    }
-    setIsServicesOpen(false)
-  }
-
   const handleNavClick = (sectionId: string) => {
     if (isHomePage) {
       const element = document.getElementById(sectionId)
@@ -121,15 +110,15 @@ export default function Footer() {
               </h4>
               <nav className="space-y-4">
                 {[
-                  { id: 'home', label: 'Home' },
-                  { id: 'about', label: 'About' },
-                  { id: 'work', label: 'Work' },
-                  { id: 'contact', label: 'Contact' }
+                  { id: 'home', label: 'Home'  , link:'/#home'},
+                  { id: 'about', label: 'About', link:'/#about' },
+                  // { id: 'work', label: 'Work' },
+                  { id: 'contact', label: 'Contact', link :"/contact" }
                 ].map((item) => (
                   <Link
                     key={item.id}
-                    href={`/#${item.id}`}
-                    onClick={(e) => handleHomePageScroll(e, item.id)}
+                    href={item.link}
+                    // onClick={(e) => handleHomePageScroll(e, item.id)}
                     className="block text-sm font-medium text-text-muted-light dark:text-text-muted-dark hover:text-text-main-light dark:hover:text-white transition-colors hover:translate-x-1 transform duration-200"
                   >
                     {item.label}
