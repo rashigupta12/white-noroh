@@ -34,7 +34,7 @@ const HowWeDoSection = () => {
   ];
 
   return (
-    <section className="py-5 px-4 sm:px-6 lg:px-8 bg-linear-to-b from-gray-50 to-white dark:from-gray-900 dark:to-gray-800">
+    <section className="px-4 sm:px-6 lg:px-8 bg-linear-to-b from-gray-50 to-white dark:from-gray-900 dark:to-gray-800">
       <div className="max-w-7xl mx-auto">
         {/* Section Header */}
         <div className="text-center ">
