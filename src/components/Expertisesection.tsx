@@ -1,4 +1,3 @@
-//components/expertisesection.tsx
 "use client";
 
 import {
@@ -18,8 +17,11 @@ import {
 import Image from "next/image";
 import Link from "next/link";
 import { services } from "@/data/data"; // Import the services data
+import { useEffect, useState } from "react"; // Import useState and useEffect
 
 export default function ExpertiseSection() {
+  const [isMobile, setIsMobile] = useState(false);
+
   // Function to find service by image URL or title
   const getServiceSlug = (imageUrl: string, title: string) => {
     // Try to find by image URL first
@@ -31,18 +33,34 @@ export default function ExpertiseSection() {
     return service ? `/service/${service.id}` : "/services";
   };
 
+  // Check screen size on mount and resize
+  useEffect(() => {
+    const checkScreenSize = () => {
+      setIsMobile(window.innerWidth < 768);
+    };
+
+    // Initial check
+    checkScreenSize();
+
+    // Add event listener
+    window.addEventListener("resize", checkScreenSize);
+
+    // Cleanup
+    return () => window.removeEventListener("resize", checkScreenSize);
+  }, []);
+
   return (
     <>
       <main id="service" className="pt-24 pb-20">
         <section className="max-w-5xl mx-auto px-6 text-center mb-20 fade-in-up">
           {/* Use font-futura-md class for "Our Expertise" */}
-          <h2 className="font-futura-md text-4xl md:text-5xl text-text-main-light mb-6 font-medium tracking-tight">
+          <h2 className="font-futura-md text-4xl md:text-4xl text-text-main-light mb-6 font-medium tracking-tight">
             Our Expertise
           </h2>
           <p className="text-text-muted-light dark:text-text-muted-dark leading-relaxed max-w-4xl mx-auto text-base md:text-lg font-sans">
             We craft digital experiences and brand identities with a focus on
-            simplicity, elegance, and purpose. From technical foundations to
-            creative storytelling, we offer a holistic suite of services to
+            simplicity, elegance, and purpose. With a work experience of 20+years in
+            creative storytelling to laying technical foundations, we offer a holistic suite of services to
             elevate your brand.
           </p>
         </section>
@@ -58,11 +76,16 @@ export default function ExpertiseSection() {
                   )}
                   className="block w-full h-full relative"
                 >
-                  <div className="absolute inset-0 bg-primary/10 z-10 mix-blend-multiply transition-opacity group-hover:opacity-0"></div>
+                  {/* Only show overlay on desktop */}
+                  {!isMobile && (
+                    <div className="absolute inset-0 bg-primary/10 z-10 mix-blend-multiply transition-opacity group-hover:opacity-0"></div>
+                  )}
                   <Image
                     alt="Various branding materials laid out on a table"
-                    className="card-img w-full h-full object-cover transition-transform duration-700 ease-out grayscale group-hover:grayscale-0 hover:scale-105"
-                    src="/Banner.png"
+                    className={`card-img w-full h-full object-cover transition-transform duration-700 ease-out hover:scale-105 ${
+                      !isMobile ? "grayscale group-hover:grayscale-0" : ""
+                    }`}
+                    src="/branding/Brand & creative mobile banner.png"
                     fill
                     sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
                     style={{ objectFit: "cover" }}
@@ -111,10 +134,15 @@ export default function ExpertiseSection() {
                   href={getServiceSlug("/itservice/hero.jpeg", "IT Services")}
                   className="block w-full h-full relative"
                 >
-                  <div className="absolute inset-0 bg-primary/10 z-10 mix-blend-multiply transition-opacity group-hover:opacity-0"></div>
+                  {/* Only show overlay on desktop */}
+                  {!isMobile && (
+                    <div className="absolute inset-0 bg-primary/10 z-10 mix-blend-multiply transition-opacity group-hover:opacity-0"></div>
+                  )}
                   <Image
                     alt="Minimalist coding setup on a laptop"
-                    className="card-img w-full h-full object-cover transition-transform duration-700 ease-out grayscale group-hover:grayscale-0 hover:scale-105"
+                    className={`card-img w-full h-full object-cover transition-transform duration-700 ease-out hover:scale-105 ${
+                      !isMobile ? "grayscale group-hover:grayscale-0" : ""
+                    }`}
                     src="/itservice/hero.jpeg"
                     fill
                     sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
@@ -159,10 +187,9 @@ export default function ExpertiseSection() {
           </div>
 
           {/* Media & Sound Card - Full Width */}
-          {/* Media & Sound Card - Full Width */}
           <div className="group w-full mb-10 bg-surface-light dark:bg-surface-dark rounded-2xl border border-gray-100 dark:border-zinc-800 overflow-hidden hover:shadow-2xl hover:shadow-primary/5 transition-all duration-500 fade-in-up delay-200">
             {/* Image Section */}
-            <div className="relative w-full h-55 md:h-65 overflow-hidden">
+            <div className="relative w-full h-80 md:h-50 lg:h-75 overflow-hidden">
               <Link
                 href={getServiceSlug(
                   "/Media and Sound banner.png",
@@ -170,17 +197,33 @@ export default function ExpertiseSection() {
                 )}
                 className="block w-full h-full relative"
               >
-                {/* Add the overlay effect */}
-                <div className="absolute inset-0 bg-primary/10 z-10 mix-blend-multiply transition-opacity group-hover:opacity-0"></div>
+                {/* Add the overlay effect - only show on desktop */}
+                {!isMobile && (
+                  <div className="absolute inset-0 bg-primary/10 z-10 mix-blend-multiply transition-opacity group-hover:opacity-0"></div>
+                )}
 
-                <Image
-                  src="/Media and Sound banner.png"
-                  alt="Media and sound equipment"
-                  className="w-full h-full object-cover transition-transform duration-700 ease-out grayscale group-hover:grayscale-0 group-hover:scale-105"
-                  fill
-                  sizes="100vw"
-                  style={{ objectFit: "cover" }}
-                />
+                {/* Conditional rendering based on screen size */}
+                {isMobile ? (
+                  // Mobile image - always in color
+                  <Image
+                    src="/Media & Sound.png" // Add your mobile-optimized image
+                    alt="Media and sound equipment"
+                    className="w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-105"
+                    fill
+                    sizes="100vw"
+                    style={{ objectFit: "cover", objectPosition: "center" }}
+                  />
+                ) : (
+                  // Desktop/Tab image - with grayscale effect and better positioning
+                  <Image
+                    src="/Media and Sound banner.png" // Keep original desktop image
+                    alt="Media and sound equipment"
+                    className="w-full h-full object-cover transition-transform duration-700 ease-out grayscale group-hover:grayscale-0 group-hover:scale-105"
+                    fill
+                    sizes="100vw"
+                    style={{ objectFit: "contain", objectPosition: "center" }}
+                  />
+                )}
 
                 {/* Add the icon on top left */}
                 <div className="absolute top-6 left-6 z-20 bg-white dark:bg-surface-dark/90 backdrop-blur-sm p-3 rounded-xl border border-gray-100 dark:border-zinc-700 shadow-sm">
@@ -240,14 +283,19 @@ export default function ExpertiseSection() {
                   )}
                   className="block w-full h-full relative"
                 >
-                  <div className="absolute inset-0 bg-primary/10 z-10 mix-blend-multiply transition-opacity group-hover:opacity-0"></div>
+                  {/* Only show overlay on desktop */}
+                  {!isMobile && (
+                    <div className="absolute inset-0 bg-primary/10 z-10 mix-blend-multiply transition-opacity group-hover:opacity-0"></div>
+                  )}
                   <Image
                     alt="Modern art gallery exhibition space"
-                    className="card-img w-full h-full object-cover transition-transform duration-700 ease-out grayscale group-hover:grayscale-0 hover:scale-105"
+                    className={`card-img w-full h-full object-cover transition-transform duration-700 ease-out hover:scale-105 ${
+                      !isMobile ? "grayscale group-hover:grayscale-0" : ""
+                    }`}
                     src="/Exhibition/Exhibition Approach.png"
                     fill
                     sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-                    style={{ objectFit: "cover" }}
+                    style={{ objectFit: "cover", objectPosition: "center" }}
                   />
                   <div className="absolute top-4 left-4 z-20 bg-surface-light/90 dark:bg-surface-dark/90 backdrop-blur-sm p-2 rounded-lg border border-gray-100 dark:border-zinc-700 shadow-sm">
                     <Store className="text-text-main-light w-5 h-5" />
@@ -288,14 +336,19 @@ export default function ExpertiseSection() {
                   href={getServiceSlug("/social media.jpg", "Social Media")}
                   className="block w-full h-full relative"
                 >
-                  <div className="absolute inset-0 bg-primary/20 z-10 mix-blend-multiply"></div>
+                  {/* Only show overlay on desktop */}
+                  {!isMobile && (
+                    <div className="absolute inset-0 bg-primary/20 z-10 mix-blend-multiply transition-opacity group-hover:opacity-0"></div>
+                  )}
                   <Image
                     alt="Smartphone displaying social media apps"
-                    className="card-img w-full h-full object-cover transition-transform duration-700 ease-out grayscale group-hover:grayscale-0 hover:scale-105"
+                    className={`card-img w-full h-full object-cover transition-transform duration-700 ease-out hover:scale-105 ${
+                      !isMobile ? "grayscale group-hover:grayscale-0" : ""
+                    }`}
                     src="/Social Media banner for homepage.png"
                     fill
                     sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-                    style={{ objectFit: "cover" }}
+                    style={{ objectFit: "cover", objectPosition: "center" }}
                   />
                   <div className="absolute top-4 left-4 z-20 bg-surface-light/90 dark:bg-surface-dark/90 backdrop-blur-sm p-2 rounded-lg border border-gray-100 dark:border-zinc-700 shadow-sm">
                     <TrendingUp className="text-text-main-light w-5 h-5" />
@@ -341,13 +394,14 @@ export default function ExpertiseSection() {
                 >
                   <Image
                     alt="Smartphone displaying social media apps"
-                    className="card-img w-full h-full object-cover transition-transform duration-700 ease-out grayscale group-hover:grayscale-0 hover:scale-105"
+                    className={`card-img w-full h-full object-cover transition-transform duration-700 ease-out hover:scale-105 ${
+                      !isMobile ? "grayscale group-hover:grayscale-0" : ""
+                    }`}
                     src="/printing-solutions/homeprintingsolutionimage.png"
                     fill
                     sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-                    style={{ objectFit: "cover" }}
+                    style={{ objectFit: "cover", objectPosition: "center" }}
                   />
-                  {/* <Printer className="text-text-muted-light/30 w-16 h-16" /> */}
                   <div className="absolute top-4 left-4 z-20 bg-surface-light/90 dark:bg-surface-dark/90 backdrop-blur-sm p-2 rounded-lg border border-gray-100 dark:border-zinc-700 shadow-sm">
                     <Printer className="text-text-main-light w-5 h-5" />
                   </div>
@@ -359,7 +413,7 @@ export default function ExpertiseSection() {
                   Tangible
                 </span>
                 <h3 className="font-display text-xl md:text-2xl mb-4 text-text-main-light dark:text-white font-bold">
-                  Printing Solutions
+                  Printing 
                 </h3>
                 <p className="text-text-muted-light dark:text-text-muted-dark mb-6 text-sm leading-relaxed flex-1">
                   High-quality printing services for all your branding

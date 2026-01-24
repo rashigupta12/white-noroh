@@ -89,7 +89,6 @@ export default function Footer() {
                   <Phone className="w-4 h-4" />
                   <span className="underline-offset-4 hover:underline">+91 9389495430</span>
                 </a>
-             
               </div>
             </div>
           </div>
@@ -104,15 +103,13 @@ export default function Footer() {
               </h4>
               <nav className="space-y-4">
                 {[
-                  { id: 'home', label: 'Home'  , link:'/#home'},
-                  { id: 'about', label: 'About', link:'/#about' },
-                
-                  { id: 'contact', label: 'Contact', link :"/contact" }
+                  { id: 'home', label: 'Home', link: '/#home' },
+                  { id: 'service', label: 'Services', link: '/#service' },
+                  { id: 'contact', label: 'Contact', link: '/contact' }
                 ].map((item) => (
                   <Link
                     key={item.id}
                     href={item.link}
-                    // onClick={(e) => handleHomePageScroll(e, item.id)}
                     className="block text-sm font-medium text-text-muted-light dark:text-text-muted-dark hover:text-text-main-light dark:hover:text-white transition-colors hover:translate-x-1 transform duration-200"
                   >
                     {item.label}
@@ -136,17 +133,15 @@ export default function Footer() {
               </div>
               
               {/* Desktop Services List */}
-              <div className="hidden lg:block space-y-4">
+              <div className="hidden lg:block space-y-3">
                 {services.slice(0, 5).map((service) => (
                   <Link
                     key={service.id}
                     href={`/service/${service.id}`}
-                    className="block text-sm font-medium text-text-muted-light dark:text-text-muted-dark hover:text-text-main-light dark:hover:text-white transition-colors group"
+                    className="flex items-center gap-2 text-sm font-medium text-text-muted-light dark:text-text-muted-dark hover:text-text-main-light dark:hover:text-white transition-colors group"
                   >
-                    <div className="flex items-center gap-2">
-                      <ArrowRight className="w-3 h-3 opacity-0 group-hover:opacity-100 transition-opacity" />
-                      <span>{service.title}</span>
-                    </div>
+                    <ArrowRight className="w-3 h-3 opacity-0 group-hover:opacity-100 transition-opacity -ml-1" />
+                    <span className="group-hover:ml-1 transition-all duration-200">{service.title}</span>
                   </Link>
                 ))}
                 <Link
@@ -155,7 +150,7 @@ export default function Footer() {
                     e.preventDefault()
                     handleNavClick('service')
                   }}
-                  className="inline-flex items-center gap-2 text-sm font-semibold text-primary hover:text-primary/80 transition-colors group mt-2"
+                  className="inline-flex items-center gap-2 text-sm font-semibold text-primary hover:text-primary/80 transition-colors group mt-4"
                 >
                   View All Services
                   <ArrowRight className="w-3 h-3 group-hover:translate-x-1 transition-transform" />
@@ -164,15 +159,16 @@ export default function Footer() {
 
               {/* Mobile Services Dropdown */}
               <div className="lg:hidden">
-                <div className="space-y-4">
+                <div className="space-y-3">
                   {isServicesOpen && services.slice(0, 5).map((service) => (
                     <Link
                       key={service.id}
                       href={`/service/${service.id}`}
                       onClick={() => setIsServicesOpen(false)}
-                      className="block text-sm font-medium text-text-muted-light dark:text-text-muted-dark hover:text-text-main-light dark:hover:text-white transition-colors"
+                      className="flex items-center gap-2 text-sm font-medium text-text-muted-light dark:text-text-muted-dark hover:text-text-main-light dark:hover:text-white transition-colors"
                     >
-                      {service.title}
+                      <ArrowRight className="w-3 h-3" />
+                      <span>{service.title}</span>
                     </Link>
                   ))}
                   {isServicesOpen && (
@@ -183,7 +179,7 @@ export default function Footer() {
                         setIsServicesOpen(false)
                         handleNavClick('service')
                       }}
-                      className="inline-flex items-center gap-2 text-sm font-semibold text-primary hover:text-primary/80 transition-colors group"
+                      className="inline-flex items-center gap-2 text-sm font-semibold text-primary hover:text-primary/80 transition-colors group mt-4"
                     >
                       View All Services
                       <ArrowRight className="w-3 h-3 group-hover:translate-x-1 transition-transform" />
@@ -193,30 +189,7 @@ export default function Footer() {
               </div>
             </div>
 
-            {/* Social Links */}
-            <div>
-              <h4 className="text-sm font-bold uppercase tracking-widest mb-6 text-text-main-light dark:text-white">
-                Connect
-              </h4>
-              <div className="space-y-4">
-                {[
-                  { name: 'Instagram', href: '#' },
-                  { name: 'LinkedIn', href: '#' },
-                  { name: 'Behance', href: '#' },
-                  { name: 'Dribbble', href: '#' }
-                ].map((social) => (
-                  <a
-                    key={social.name}
-                    href={social.href}
-                    className="block text-sm font-medium text-text-muted-light dark:text-text-muted-dark hover:text-text-main-light dark:hover:text-white transition-colors hover:translate-x-1 transform duration-200"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                  >
-                    {social.name}
-                  </a>
-                ))}
-              </div>
-            </div>
+
 
           </div>
         </div>
@@ -228,18 +201,7 @@ export default function Footer() {
               © 2025 White Noroh Studio. All rights reserved.
             </p>
             <div className="flex items-center gap-6">
-              <Link 
-                href="/privacy" 
-                className="text-xs text-text-muted-light dark:text-text-muted-dark hover:text-text-main-light dark:hover:text-white transition-colors"
-              >
-                Privacy Policy
-              </Link>
-              <Link 
-                href="/terms" 
-                className="text-xs text-text-muted-light dark:text-text-muted-dark hover:text-text-main-light dark:hover:text-white transition-colors"
-              >
-                Terms of Service
-              </Link>
+             
               <div className="text-xs text-text-muted-light dark:text-text-muted-dark">
                 Crafted with passion
               </div>
