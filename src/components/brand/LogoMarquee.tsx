@@ -22,7 +22,7 @@ const logos = [
 
 export default function LogoMarquee() {
   return (
-    <section className="pt-30 md:pt-20  relative overflow-hidden bg-white ">
+    <section className="  relative overflow-hidden bg-white pt-10 ">
        <div className="text-center">
           <h2 className="font-futura-md text-4xl md:text-4xl text-text-main-light mb-6  tracking-tight">
             Logo Design
