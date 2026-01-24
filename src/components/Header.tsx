@@ -55,11 +55,11 @@ export default function Header() {
   };
 
   return (
-    <header className="fixed top-0 w-full z-50 bg-white ">
+    <header className="fixed top-0 w-full z-[100] bg-white shadow-sm border-b border-gray-100">
       <div className="mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex flex-col sm:flex-row items-center justify-between py-6 sm:py-5">
+        <div className="flex flex-col sm:flex-row items-center justify-between py-4 sm:py-5">
           {/* Logo */}
-          <Link href="/" className="flex items-center mb-5 sm:mb-0">
+          <Link href="/" className="flex items-center mb-4 sm:mb-0">
             <Image
               src="/logo.png"
               alt="White Noroh Studio Logo"
@@ -81,12 +81,9 @@ export default function Header() {
               Home
             </Link>
 
-          
-
             {/* Services Dropdown */}
             <div className="relative" ref={dropdownRef}>
               <div
-                // href="/#service"
                 onClick={(e) => {
                   if (isHomePage) {
                     e.preventDefault();
