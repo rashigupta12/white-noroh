@@ -15,43 +15,6 @@
   --accent-dark: #2a2a2a;
 }
 
-/* Futura Font Faces */
-@font-face {
-  font-family: 'Futura';
-  src: url('/fonts/Futura-Book.woff2') format('woff2'),
-       url('/fonts/Futura-Book.woff') format('woff');
-  font-weight: 400;
-  font-style: normal;
-  font-display: swap;
-}
-
-@font-face {
-  font-family: 'Futura';
-  src: url('/fonts/Futura-Medium.woff2') format('woff2'),
-       url('/fonts/Futura-Medium.woff') format('woff');
-  font-weight: 500;
-  font-style: normal;
-  font-display: swap;
-}
-
-@font-face {
-  font-family: 'Futura';
-  src: url('/fonts/Futura-Bold.woff2') format('woff2'),
-       url('/fonts/Futura-Bold.woff') format('woff');
-  font-weight: 700;
-  font-style: normal;
-  font-display: swap;
-}
-
-@font-face {
-  font-family: 'Futura Md BT';
-  src: url('/fonts/Futura-Medium-BT.woff2') format('woff2'),
-       url('/fonts/Futura-Medium-BT.woff') format('woff');
-  font-weight: 500;
-  font-style: normal;
-  font-display: swap;
-}
-
 @theme {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
@@ -63,10 +26,8 @@
   --color-text-light: var(--text-light);
   --color-text-dark: var(--text-dark);
   --color-accent-dark: var(--accent-dark);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-  --font-display: 'Futura Md BT', 'Futura', sans-serif; /* Updated to Futura */
-  --font-body: 'Futura', sans-serif; /* Updated to Futura */
+  --font-display: var(--font-inter);
+  --font-body: var(--font-inter);
 }
 
 .dark {
@@ -83,7 +44,6 @@
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: var(--font-body), 'Futura', Arial, sans-serif; /* Updated to Futura */
 }
 
 /* Custom scrollbar */
@@ -106,16 +66,6 @@ body {
 
 html {
   scroll-behavior: smooth;
-}
-
-/* Utility class for Futura Md BT specifically */
-.font-futura-md {
-  font-family: 'Futura Md BT', 'Futura', sans-serif;
-}
-
-/* Ensure all headings use Futura */
-h1, h2, h3, h4, h5, h6 {
-  font-family: var(--font-display), 'Futura Md BT', 'Futura', sans-serif;
 }
 
 @keyframes marquee {
