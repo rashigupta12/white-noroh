@@ -78,6 +78,19 @@ export default function Footer() {
                   +91 9389495430
                 </span>
               </a>
+
+              
+              <a
+                href="tel:+919811042542"
+                className="flex items-center gap-3 text-sm hover:text-text-main-light dark:hover:text-white transition-colors"
+              >
+                <Phone className="w-4 h-4" />
+                <span className="hover:underline underline-offset-4">
+                  +91 98110 42542
+                </span>
+              </a>
+
+              
             </div>
           </div>
 
