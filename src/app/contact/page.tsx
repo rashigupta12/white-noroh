@@ -68,6 +68,7 @@ const ContactPage = () => {
                   </a>
 
                   <p>📞 +91 9389495430</p>
+                  <p>📞 +91 98110 42542</p>
 
                   <p className="pt-4 text-xs leading-relaxed">
                     We usually respond within 24 hours on business days.
