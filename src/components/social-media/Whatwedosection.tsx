@@ -15,14 +15,14 @@ const WhatWeDoSection = () => {
       image: "/social-media/Social Media Marketing.png",
       description:
         "Understanding the brand and ensuring its dignity at all levels",
-      points: ["Social Media", "Marketing"],
+      points: ["Social Media Marketing"],
     },
     {
       title: "Transparency",
       image: "/social-media/Performance Marketing.png",
       description:
         "No hidden costs ensuring the best Quality Vs. Cost equilibrium",
-      points: ["Performance", "Marketing"],
+      points: ["Performance Marketing"],
     },
     {
       title: "Strong Operations",
