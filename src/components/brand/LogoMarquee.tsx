@@ -44,7 +44,7 @@ export default function LogoMarquee() {
                 fill
                 className="object-contain"
                 sizes="(max-width: 768px) 128px, 144px"
-                quality={85}
+                // quality={85}
               />
             </div>
           </div>
