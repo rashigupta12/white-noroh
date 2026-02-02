@@ -48,13 +48,13 @@ export default function PortfolioSection() {
 
   const images = isMobile ? mobileImages : desktopImages;
 
-  /* ================= AUTOPLAY ================= */
+  /* ================= AUTOPLAY (Continuous Auto-Scroll) ================= */
 
   useEffect(() => {
     if (!isPaused) {
       intervalRef.current = setInterval(() => {
         setCurrentIndex((prev) => (prev + 1) % images.length);
-      }, 2000);
+      }, 3000); // Auto-advance every 3 seconds
     }
 
     return () => {
@@ -64,14 +64,25 @@ export default function PortfolioSection() {
 
   /* ================= CONTROLS ================= */
 
-  const goToSlide = (index: number) => setCurrentIndex(index);
+  const goToSlide = (index: number) => {
+    setCurrentIndex(index);
+    // Briefly pause auto-scroll when user manually selects a slide
+    setIsPaused(true);
+    setTimeout(() => setIsPaused(false), 5000); // Resume after 5 seconds
+  };
 
   const goToPrevSlide = () => {
     setCurrentIndex((prev) => (prev === 0 ? images.length - 1 : prev - 1));
+    // Briefly pause auto-scroll when user navigates manually
+    setIsPaused(true);
+    setTimeout(() => setIsPaused(false), 5000);
   };
 
   const goToNextSlide = () => {
     setCurrentIndex((prev) => (prev + 1) % images.length);
+    // Briefly pause auto-scroll when user navigates manually
+    setIsPaused(true);
+    setTimeout(() => setIsPaused(false), 5000);
   };
 
   /* ================= UI ================= */
@@ -85,8 +96,8 @@ export default function PortfolioSection() {
         {/* ================= CAROUSEL ================= */}
         <div
           className="relative w-full overflow-hidden group"
-          // onMouseEnter={() => setIsPaused(true)}
-          // onMouseLeave={() => setIsPaused(false)}
+          onMouseEnter={() => setIsPaused(true)}
+          onMouseLeave={() => setIsPaused(false)}
         >
           {/* Slides Container with Fixed Aspect Ratios */}
           <div
@@ -114,10 +125,10 @@ export default function PortfolioSection() {
               ))}
             </div>
 
-            {/* ================= ARROWS ================= */}
+            {/* ================= ARROWS (Always Visible on Desktop, Show on Hover on Mobile) ================= */}
             <button
               onClick={goToPrevSlide}
-              className="absolute left-3 sm:left-5 top-1/2 -translate-y-1/2 bg-black/30 hover:bg-black/50 backdrop-blur text-white p-2 sm:p-3 rounded-full transition opacity-0 group-hover:opacity-100 z-10"
+              className="absolute left-3 sm:left-5 top-1/2 -translate-y-1/2 bg-black/40 hover:bg-black/60 backdrop-blur text-white p-2 sm:p-3 rounded-full transition-all duration-300 opacity-70 sm:opacity-0 group-hover:opacity-100 z-10 hover:scale-110"
               aria-label="Previous"
             >
               <svg className="w-4 h-4 sm:w-5 sm:h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -127,7 +138,7 @@ export default function PortfolioSection() {
 
             <button
               onClick={goToNextSlide}
-              className="absolute right-3 sm:right-5 top-1/2 -translate-y-1/2 bg-black/30 hover:bg-black/50 backdrop-blur text-white p-2 sm:p-3 rounded-full transition opacity-0 group-hover:opacity-100 z-10"
+              className="absolute right-3 sm:right-5 top-1/2 -translate-y-1/2 bg-black/40 hover:bg-black/60 backdrop-blur text-white p-2 sm:p-3 rounded-full transition-all duration-300 opacity-70 sm:opacity-0 group-hover:opacity-100 z-10 hover:scale-110"
               aria-label="Next"
             >
               <svg className="w-4 h-4 sm:w-5 sm:h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -135,7 +146,21 @@ export default function PortfolioSection() {
               </svg>
             </button>
 
-
+            {/* ================= DOTS NAVIGATION ================= */}
+            <div className="absolute bottom-4 left-1/2 -translate-x-1/2 flex gap-2 z-10">
+              {images.map((_, index) => (
+                <button
+                  key={index}
+                  onClick={() => goToSlide(index)}
+                  className={`transition-all duration-300 rounded-full ${
+                    index === currentIndex
+                      ? 'w-8 h-2 bg-white'
+                      : 'w-2 h-2 bg-white/50 hover:bg-white/75'
+                  }`}
+                  aria-label={`Go to slide ${index + 1}`}
+                />
+              ))}
+            </div>
           </div>
         </div>
       </div>

@@ -1,3 +1,4 @@
+/* Add to your existing globals.css or postcss.config.mjs */
 @import "tailwindcss";
 
 @custom-variant dark (&:where(.dark, .dark *));
@@ -28,6 +29,11 @@
   --color-accent-dark: var(--accent-dark);
   --font-display: var(--font-inter);
   --font-body: var(--font-inter);
+  
+  /* Animation speeds for marquee */
+  --animate-marquee: marquee 25s linear infinite;
+  --animate-marquee-slow: marquee 35s linear infinite;
+  --animate-marquee-fast: marquee 15s linear infinite;
 }
 
 .dark {
@@ -44,6 +50,7 @@
 body {
   background: var(--background);
   color: var(--foreground);
+  font-family: var(--font-body);
 }
 
 /* Custom scrollbar */
@@ -68,9 +75,10 @@ html {
   scroll-behavior: smooth;
 }
 
+/* Marquee Animations */
 @keyframes marquee {
   0% {
-    transform: translateX(0);
+    transform: translateX(0%);
   }
   100% {
     transform: translateX(-50%);
@@ -78,5 +86,45 @@ html {
 }
 
 .animate-marquee {
-  animation: marquee 35s linear infinite;
+  animation: var(--animate-marquee);
+}
+
+.animate-marquee-slow {
+  animation: var(--animate-marquee-slow);
+}
+
+.animate-marquee-fast {
+  animation: var(--animate-marquee-fast);
+}
+
+.animate-marquee:hover,
+.animate-marquee-slow:hover,
+.animate-marquee-fast:hover {
+  animation-play-state: paused;
+}
+
+/* Smooth pause on hover */
+@media (hover: hover) {
+  .animate-marquee:hover,
+  .animate-marquee-slow:hover,
+  .animate-marquee-fast:hover {
+    animation-play-state: paused;
+  }
+}
+
+/* Mobile optimizations */
+@media (max-width: 768px) {
+  .animate-marquee {
+    animation-duration: 20s !important;
+  }
+}
+
+/* Logo hover effects */
+.logo-hover-effect {
+  transition: all 0.3s ease;
+}
+
+.logo-hover-effect:hover {
+  transform: scale(1.05);
+  filter: grayscale(0) !important;
 }

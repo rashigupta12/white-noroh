@@ -17,50 +17,36 @@ const logos = [
   "/logos/12.png",
   "/logos/13.png",
   "/logos/14.png",
-  "/logos/15.jpg"
-
+  "/logos/15.jpg",
 ];
 
 export default function LogoMarquee() {
   return (
-    <section className="  relative overflow-hidden bg-white pt-10 ">
-       <div className="text-center">
-          <h2 className="font-futura-md text-3xl md:text-4xl text-text-main-light mb-6  tracking-tight">
-            Logo Design
-          </h2>
-        </div>
-      {/* Left fade – desktop only */}
-<div className="pointer-events-none absolute left-0 top-0 z-10 hidden h-full w-64 bg-linear-to-r from-white to-transparent md:block" />
-
-{/* Right fade – desktop only */}
-<div className="pointer-events-none absolute right-0 top-0 z-10 hidden h-full w-64 bg-linear-to-l from-white to-transparent md:block" />
-
-
-      <div className="flex w-max animate-marquee hover:[animation-play-state:paused]">
-        
-        {/* First set */}
-        {logos.map((src, i) => (
-          <div key={i} className="mx-10 flex items-center">
-            <Image
-              src={src}
-              alt="Brand logo"
-              width={140}
-              height={50}
-              className=" w-auto object-contain"
-            />
-          </div>
-        ))}
-
-        {/* Duplicate set for infinite loop */}
-        {logos.map((src, i) => (
-          <div key={`dup-${i}`} className="mx-10 flex items-center">
-            <Image
-              src={src}
-              alt="Brand logo"
-              width={140}
-              height={50}
-              className=" w-auto object-contain"
-            />
+    <section className="relative overflow-hidden bg-white dark:bg-background-dark py-10">
+      <div className="text-center">
+        <h2 className="font-futura-md text-3xl md:text-4xl text-text-main-light dark:text-text-dark mb-6 tracking-tight">
+          Logo Design
+        </h2>
+      </div>
+      
+      {/* Fade edges */}
+      <div className="hidden md:block pointer-events-none absolute left-0 top-0 bottom-0 z-10 w-32 bg-linear-to-r from-white dark:from-background-dark to-transparent" />
+      <div className="hidden md:block pointer-events-none absolute right-0 top-0 bottom-0 z-10 w-32 bg-linear-to-l from-white dark:from-background-dark to-transparent" />
+      
+      {/* Marquee */}
+      <div className="flex w-max animate-marquee group">
+        {[...logos, ...logos].map((src, i) => (
+          <div key={i} className="mx-8 md:mx-10 flex items-center">
+            <div className="relative w-32 h-16 md:w-36 md:h-20 grayscale hover:grayscale-0 transition-all duration-300">
+              <Image
+                src={src}
+                alt={`Brand logo ${i % logos.length + 1}`}
+                fill
+                className="object-contain"
+                sizes="(max-width: 768px) 128px, 144px"
+                quality={85}
+              />
+            </div>
           </div>
         ))}
       </div>
