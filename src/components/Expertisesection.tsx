@@ -1,3 +1,4 @@
+/* eslint-disable react-hooks/refs */
 "use client";
 
 import {
@@ -16,21 +17,27 @@ import {
 } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
-import { services } from "@/data/data"; // Import the services data
-import { useEffect, useState } from "react"; // Import useState and useEffect
+import { services } from "@/data/data";
+import { useEffect, useState, useRef } from "react"; // Added useRef
 
 export default function ExpertiseSection() {
   const [isMobile, setIsMobile] = useState(false);
+  const videoRef = useRef<HTMLVideoElement>(null);
 
   // Function to find service by image URL or title
   const getServiceSlug = (imageUrl: string, title: string) => {
-    // Try to find by image URL first
     const service = services.find(
       (s) =>
         s.heroImage === imageUrl ||
         s.title.toLowerCase().includes(title.toLowerCase()),
     );
     return service ? `/service/${service.id}` : "/services";
+  };
+
+  const toggleSound = () => {
+    if (!videoRef.current) return;
+    videoRef.current.muted = !videoRef.current.muted;
+    videoRef.current.play();
   };
 
   // Check screen size on mount and resize
@@ -53,7 +60,6 @@ export default function ExpertiseSection() {
     <>
       <main id="service" className="pt-24 pb-20">
         <section className="max-w-5xl mx-auto px-6 text-center mb-20 fade-in-up">
-          {/* Use font-futura-md class for "Our Expertise" */}
           <h2 className="font-futura-md text-4xl md:text-4xl text-text-main-light mb-6 font-medium tracking-tight">
             Our Expertise
           </h2>
@@ -76,7 +82,6 @@ export default function ExpertiseSection() {
                   )}
                   className="block w-full h-full relative"
                 >
-                  {/* Only show overlay on desktop */}
                   {!isMobile && (
                     <div className="absolute inset-0 bg-primary/10 z-10 mix-blend-multiply transition-opacity group-hover:opacity-0"></div>
                   )}
@@ -134,7 +139,6 @@ export default function ExpertiseSection() {
                   href={getServiceSlug("/itservice/hero.jpeg", "IT Services")}
                   className="block w-full h-full relative"
                 >
-                  {/* Only show overlay on desktop */}
                   {!isMobile && (
                     <div className="absolute inset-0 bg-primary/10 z-10 mix-blend-multiply transition-opacity group-hover:opacity-0"></div>
                   )}
@@ -197,26 +201,22 @@ export default function ExpertiseSection() {
                 )}
                 className="block w-full h-full relative"
               >
-                {/* Add the overlay effect - only show on desktop */}
                 {!isMobile && (
                   <div className="absolute inset-0 bg-primary/10 z-10 mix-blend-multiply transition-opacity group-hover:opacity-0"></div>
                 )}
 
-                {/* Conditional rendering based on screen size */}
                 {isMobile ? (
-                  // Mobile image - always in color
                   <Image
-                    src="/Media & Sound.png" // Add your mobile-optimized image
+                    src="/Media & Sound.png"
                     alt="Media and sound equipment"
-                    className="w-full h-full object-cover transition-transform duration-700 ease-out "
+                    className="w-full h-full object-cover transition-transform duration-700 ease-out"
                     fill
                     sizes="100vw"
                     style={{ objectFit: "cover", objectPosition: "center" }}
                   />
                 ) : (
-                  // Desktop/Tab image - with grayscale effect and better positioning
                   <Image
-                    src="/Media and Sound banner (1).png" // Keep original desktop image
+                    src="/Media and Sound banner (1).png"
                     alt="Media and sound equipment"
                     className="w-full h-full object-cover transition-transform duration-700 ease-out grayscale group-hover:grayscale-0 group-hover:scale-105"
                     fill
@@ -225,47 +225,91 @@ export default function ExpertiseSection() {
                   />
                 )}
 
-                {/* Add the icon on top left */}
                 <div className="absolute top-6 left-6 z-20 bg-white dark:bg-surface-dark/90 backdrop-blur-sm p-3 rounded-xl border border-gray-100 dark:border-zinc-700 shadow-sm">
                   <Video className="text-text-main-light w-6 h-6" />
                 </div>
 
-                {/* Add the dark overlay on hover */}
                 <div className="absolute inset-0 bg-black/0 group-hover:bg-black/10 transition-colors duration-300"></div>
               </Link>
             </div>
 
-            {/* Content Section */}
+            {/* Content Section - Split into two columns */}
             <div className="px-8 py-10 md:px-10">
-              <span className="text-xs font-extrabold tracking-[0.2em] uppercase text-text-muted-light block mb-3">
-                Media & Visual
-              </span>
+              <div className="flex flex-col lg:flex-row gap-8 lg:gap-12">
+                {/* Text Column */}
+                <div className="lg:w-1/2">
+                  <span className="text-xs font-extrabold tracking-[0.2em] uppercase text-text-muted-light block mb-3">
+                    Media & Visual
+                  </span>
 
-              <h3 className="font-display text-2xl md:text-2xl font-semibold text-text-main-light dark:text-white mb-4">
-                Media & Sound
-              </h3>
+                  <h3 className="font-display text-2xl md:text-2xl font-semibold text-text-main-light dark:text-white mb-4">
+                    Media & Sound
+                  </h3>
 
-              <p className="text-text-muted-light dark:text-text-muted-dark text-sm md:text-base leading-relaxed max-w-3xl mb-8">
-                Captivate your audience through immersive media. From crisp
-                photography to professional sound engineering, we ensure your
-                message is seen and heard clearly with cinematic quality.
-              </p>
+                  <p className="text-text-muted-light dark:text-text-muted-dark text-sm md:text-base leading-relaxed mb-8">
+                    Captivate your audience through immersive media. From crisp
+                    photography to professional sound engineering, we ensure your
+                    message is seen and heard clearly with cinematic quality.
+                  </p>
 
-              {/* Services */}
-              <div className="flex flex-wrap gap-x-10 gap-y-4 text-sm text-text-main-light dark:text-gray-300">
-                <div className="flex items-center gap-2">
-                  <Video className="text-text-muted-light w-5 h-5" />
-                  Video Production
+                  {/* Services */}
+                  <div className="space-y-4 text-sm text-text-main-light dark:text-gray-300">
+                    <div className="flex items-center gap-3">
+                      <div className="bg-primary/10 p-2 rounded-lg">
+                        <Camera className="text-primary w-5 h-5" />
+                      </div>
+                      <div>
+                        <div className="font-medium">Product Photography</div>
+                       
+                      </div>
+                    </div>
+
+                    <div className="flex items-center gap-3">
+                      <div className="bg-primary/10 p-2 rounded-lg">
+                        <Video className="text-primary w-5 h-5" />
+                      </div>
+                      <div>
+                        <div className="font-medium">Video Production</div>
+                       
+                      </div>
+                    </div>
+
+                    <div className="flex items-center gap-3">
+                      <div className="bg-primary/10 p-2 rounded-lg">
+                        <Volume2 className="text-primary w-5 h-5" />
+                      </div>
+                      <div>
+                        <div className="font-medium">Sound Design</div>
+                        
+                      </div>
+                    </div>
+                  </div>
                 </div>
 
-                <div className="flex items-center gap-2">
-                  <Volume2 className="text-text-muted-light w-5 h-5" />
-                  Sound Design
-                </div>
+                {/* Video Column */}
+                <div className="lg:w-1/2">
+                  <div className="relative aspect-video rounded-2xl overflow-hidden shadow-2xl cursor-pointer group/video"
+                    onClick={toggleSound}
+                  >
+                    <video
+                      ref={videoRef}
+                      src="/videography.mp4"
+                      autoPlay
+                      loop
+                      muted
+                      playsInline
+                      className="w-full h-full object-cover transition-transform duration-500 group-hover/video:scale-105"
+                    />
 
-                <div className="flex items-center gap-2">
-                  <Camera className="text-text-muted-light w-5 h-5" />
-                  Product Photography
+                   
+
+                    {/* Click hint - only shows on hover */}
+                    <div className="absolute bottom-4 right-4 text-xs bg-black/60 text-white px-3 py-2 rounded-full opacity-0 group-hover/video:opacity-100 transition-opacity duration-300">
+                      Tap for sound
+                    </div>
+                  </div>
+
+               
                 </div>
               </div>
             </div>
@@ -283,7 +327,6 @@ export default function ExpertiseSection() {
                   )}
                   className="block w-full h-full relative"
                 >
-                  {/* Only show overlay on desktop */}
                   {!isMobile && (
                     <div className="absolute inset-0 bg-primary/10 z-10 mix-blend-multiply transition-opacity group-hover:opacity-0"></div>
                   )}
@@ -336,7 +379,6 @@ export default function ExpertiseSection() {
                   href={getServiceSlug("/social media.jpg", "Social Media")}
                   className="block w-full h-full relative"
                 >
-                  {/* Only show overlay on desktop */}
                   {!isMobile && (
                     <div className="absolute inset-0 bg-primary/20 z-10 mix-blend-multiply transition-opacity group-hover:opacity-0"></div>
                   )}
