@@ -1,6 +1,7 @@
 // import ContactSection from "@/components/ContactSection";
 import ExpertiseSection from "@/components/Expertisesection";
 import HeroSection from "@/components/HeroSection";
+import VideographySection from "@/components/media-sound/Videography";
 import PortfolioSection from "@/components/PortfolioSection";
 import WelcomeSection from "@/components/WelcomeSection";
 
@@ -15,6 +16,7 @@ export default function Home() {
         <HeroSection />
 
         <ExpertiseSection />
+        <VideographySection/>
 
         {/* <ContactSection /> */}
       </main>
