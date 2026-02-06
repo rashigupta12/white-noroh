@@ -6,16 +6,12 @@ import {
   ArrowLeft,
   CheckCircle,
   Code,
-  Globe,
-  Mail,
-  MapPin,
   Monitor,
-  Phone,
   Search,
   Shield,
   Smartphone,
   Tag,
-  Users,
+  Users
 } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
@@ -204,96 +200,20 @@ export default function ServiceDetailPage() {
 
   const teamRef = useRef<HTMLDivElement>(null);
   const projectsRef = useRef<HTMLDivElement>(null);
-  const contactRef = useRef<HTMLDivElement>(null);
+
 
   if (!service) {
     notFound();
   }
 
-  // Helper functions for email functionality
-  const generateServiceInquiryEmail = () => {
-    const recipientEmail = "amit.gupta@gennextit.com";
-    const subject = `Service Inquiry: ${service?.title || "IT Services"}`;
-    const body = `Hello GenNext IT Team,
 
-I am interested in learning more about your ${service?.title || "IT Services"} offerings.
 
-Please provide me with more information about:
-1. Service offerings and capabilities
-2. Pricing structure
-3. Implementation process
-4. Timeline for delivery
-5. Case studies or references
 
-You can reach me at: [Your Email/Phone]
 
-Thank you!
 
-Best regards,
-[Your Name]`;
 
-    const encodedSubject = encodeURIComponent(subject);
-    const encodedBody = encodeURIComponent(body);
 
-    return `mailto:${recipientEmail}?subject=${encodedSubject}&body=${encodedBody}`;
-  };
 
-  const generateGmailServiceLink = () => {
-    const recipientEmail = "amit.gupta@gennextit.com";
-    const subject = `Service Inquiry: ${service?.title || "IT Services"}`;
-    const body = `Hello GenNext IT Team,
-
-I am interested in learning more about your ${service?.title || "IT Services"} offerings.
-
-Please provide me with more information about:
-1. Service offerings and capabilities
-2. Pricing structure
-3. Implementation process
-4. Timeline for delivery
-5. Case studies or references
-
-You can reach me at: [Your Email/Phone]
-
-Thank you!
-
-Best regards,
-[Your Name]`;
-
-    const encodedSubject = encodeURIComponent(subject);
-    const encodedBody = encodeURIComponent(body);
-
-    return `https://mail.google.com/mail/?view=cm&fs=1&to=${recipientEmail}&su=${encodedSubject}&body=${encodedBody}`;
-  };
-
-  const isMobileDevice = () => {
-    if (typeof window === "undefined") return false;
-    return /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(
-      navigator.userAgent,
-    );
-  };
-
-  const openServiceInquiryEmail = () => {
-    if (typeof window === "undefined") return;
-
-    if (isMobileDevice()) {
-      // Mobile: Use mailto to open default email app
-      const mailtoLink = generateServiceInquiryEmail();
-      window.location.href = mailtoLink;
-    } else {
-      // Desktop: Open Gmail in new tab
-      const gmailLink = generateGmailServiceLink();
-      window.open(gmailLink, "_blank");
-    }
-  };
-
-  // Contact Information
-  const contactInfo = {
-    email: "amit.gupta@gennextit.com",
-    website: "www.gennextit.com",
-    phone: "+91-78400 79095",
-    address:
-      "H-213, Sector 63 Rd, Electronic City, H Block, Sector 63, Noida, Uttar Pradesh 201309",
-  };
   return (
     <div className="min-h-screen bg-linear-to-b from-gray-50 to-white dark:from-zinc-900 dark:to-zinc-950">
       {/* Hero Section */}
