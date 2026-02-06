@@ -11,7 +11,7 @@ import {
   Shield,
   Smartphone,
   Tag,
-  Users
+  Users,
 } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
@@ -32,14 +32,14 @@ const ourProjects = {
     {
       name: "The Three Across",
       image:
-        "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800&auto=format&fit=crop",
+        "/itservice/image.png",
       description: "Enterprise resource planning solution",
       year: "2024",
       tags: ["Next.js", "PostgreSQL"],
     },
     {
       name: "ALB",
-      image: "/logos/6.png",
+      image: "/itservice/alb-logo.avif",
       description: "Advanced business analytics dashboard",
       year: "2023",
       tags: ["React", "D3.js", "AWS"],
@@ -47,15 +47,15 @@ const ourProjects = {
     {
       name: "LCA",
       image:
-        "https://images.unsplash.com/photo-1551434678-e076c223a692?w=800&auto=format&fit=crop",
+        "/itservice/lca.png",
       description: "Legal case management system",
       year: "2023",
       tags: ["Vue.js", "Laravel"],
     },
     {
-      name: "FutureTek",
+      name: "Futurexedu",
       image:
-        "https://images.unsplash.com/photo-1518770660439-4636190af475?w=800&auto=format&fit=crop",
+        "/itservice/futurexdu.png",
       description: "Technology innovation platform",
       year: "2024",
       tags: ["React", "TypeScript"],
@@ -63,7 +63,7 @@ const ourProjects = {
     {
       name: "VastuTek",
       image:
-        "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=800&auto=format&fit=crop",
+        "/itservice/vastuteq.png",
       description: "Real estate and construction management",
       year: "2023",
       tags: ["Next.js", "Prisma"],
@@ -81,7 +81,7 @@ const ourProjects = {
     {
       name: "Recruitment",
       image:
-        "https://images.unsplash.com/photo-1521737711867-e3b97375f902?w=800&auto=format&fit=crop",
+        "/itservice/hevhire.png",
       description: "AI-powered recruitment platform",
       year: "2023",
       tags: ["React", "Python", "ML"],
@@ -201,18 +201,9 @@ export default function ServiceDetailPage() {
   const teamRef = useRef<HTMLDivElement>(null);
   const projectsRef = useRef<HTMLDivElement>(null);
 
-
   if (!service) {
     notFound();
   }
-
-
-
-
-
-
-
-
 
   return (
     <div className="min-h-screen bg-linear-to-b from-gray-50 to-white dark:from-zinc-900 dark:to-zinc-950">
@@ -413,19 +404,19 @@ export default function ServiceDetailPage() {
                 {projects.map((project, idx) => (
                   <div
                     key={idx}
-                    className="group relative overflow-hidden rounded-2xl bg-white dark:bg-zinc-900 shadow-lg hover:shadow-2xl transition-all duration-500 cursor-pointer"
+                    className="group relative overflow-hidden rounded-2xl  dark:bg-zinc-900 shadow-lg hover:shadow-2xl transition-all duration-500 cursor-pointer"
                   >
                     {/* Image Section */}
-                    <div className="relative h-56 overflow-hidden">
+                    <div className="relative h-56 overflow-hidden ">
                       <Image
                         src={project.image}
                         alt={project.name}
                         fill
-                        className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
+                        className="w-full h-full object-contain "
                         sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
                         priority={idx === 0}
                       />
-                      <div className="absolute inset-0 bg-linear-to-t from-black/80 via-black/40 to-transparent opacity-60 group-hover:opacity-80 transition-opacity duration-500"></div>
+                      {/* <div className="absolute inset-0 bg-linear-to-t from-black/80 via-black/40 to-transparent opacity-60 group-hover:opacity-80 transition-opacity duration-500"></div> */}
                     </div>
 
                     {/* Details Section */}
@@ -530,8 +521,6 @@ export default function ServiceDetailPage() {
             ))}
           </div>
         </div>
-
- 
       </div>
     </div>
   );

@@ -20,6 +20,12 @@ const logos = [
   "/clients/Sarvodaya.png",
   "/clients/upsma-logo.png",
   "/clients/zomato-logo.png",
+  "/itservice/image.png",
+  "/itservice/alb-logo.avif",
+  "/itservice/lca.png",
+  "/itservice/futurexdu.png",
+  "/itservice/vastuteq.png",
+  "/itservice/hevhire.png"
 
 ];
 
