@@ -216,7 +216,7 @@ export default function ExpertiseSection() {
           <p className="text-text-muted-light dark:text-text-muted-dark text-sm md:text-base leading-relaxed mb-8">
             Captivate your audience through immersive media.<br/> From crisp
             photography to professional sound engineering, we ensure your
-            message is seen and heard clearly with cinematic quality.
+            message is seen <br/> and heard clearly with cinematic quality.
           </p>
 
           {/* Services */}
@@ -251,7 +251,7 @@ export default function ExpertiseSection() {
         </div>
 
         {/* Video Column - 60% */}
-        <div className="lg:w-3/5">
+        <div className="lg:w-3.5/5">
           <div 
             className="relative aspect-video rounded-2xl overflow-hidden shadow-2xl cursor-pointer group/video"
             onClick={(e) => {
